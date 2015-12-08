@@ -18,6 +18,7 @@ import passwordholder.bridge.com.passwordholder.model.Message;
 
 public class MainActivity extends AppCompatActivity implements AddAccountFragment.OnFragmentInteractionListener
         ,DetailsFragment.OnDetailFragmentInteractionListener ,DeleteConfirmationDialog.OnDialogInteractionListener{
+
     Bus bus;
     Toolbar mToolbar;
 
@@ -25,9 +26,7 @@ public class MainActivity extends AppCompatActivity implements AddAccountFragmen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       /* mToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle(" ");*/
+
         bus = new Bus();
         bus.register(this);
         addAccountListFragment();

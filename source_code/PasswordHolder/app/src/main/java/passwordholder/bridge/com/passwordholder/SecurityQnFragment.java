@@ -22,7 +22,7 @@ import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
 
 public class SecurityQnFragment extends Fragment {
 
-    TextView title;
+    TextView title, verTxt;
     AutoCompleteTextView txtSecurityQn;
     EditText securityAnswer;
     RelativeLayout buttonPane;
@@ -47,8 +47,12 @@ public class SecurityQnFragment extends Fragment {
         txtSecurityQn = (AutoCompleteTextView)v. findViewById(R.id.autocomplete_qn);
         securityAnswer= (EditText)v. findViewById(R.id.answer);
         btnGo=(Button)v. findViewById(R.id.btn_Go);
-
+        verTxt =(TextView)v. findViewById(R.id.txt_Ver);
         setUpUi();
+
+        verTxt.setOnClickListener(view -> {
+
+        });
     }
 
     private void setUpUi() {

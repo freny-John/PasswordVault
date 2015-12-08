@@ -55,6 +55,8 @@
     <string name="wrong_pin_msg">You entered wrong pin.\n Please try again.</string>
     <string name="clear_all">clear all</string>
     <string name="error_security_answer">Do you forgot your security answer?</string>
+    <string name="ver_txt">get verification code</string>
+    <string name="network_problem">Please check your connection</string>
 
     <string-array name="qn_array">
         <item>What is the name of your favorite childhood friend?</item>

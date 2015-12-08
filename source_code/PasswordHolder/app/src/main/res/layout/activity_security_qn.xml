@@ -135,4 +135,15 @@
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_txt"
+        android:id="@+id/txt_Ver"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="99dp"
+        android:layout_marginStart="99dp" />
 </RelativeLayout>

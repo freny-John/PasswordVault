@@ -14,8 +14,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.HashMap;
+
 import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
 import passwordholder.bridge.com.passwordholder.Utils.ValidationUtils;
+import rx.Observable;
+import rx.Observer;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 
 public class SignUpFragment extends Fragment {
@@ -171,8 +178,30 @@ public class SignUpFragment extends Fragment {
 
 
 
+  /*  public Observable<HashMap> getNetworkCall() {
+        NetworkUtils.postUrl();
+    }
+*/
+   /* Subscription subscription = getNetworkCall()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(new Observer<HashMap>() {
+                @Override
+                public void onCompleted() {
 
+                }
 
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onNext(HashMap hashMap) {
+
+                }
+            });
+*/
 
 /*
     Observable<Boolean> emailObservable = RxTextView.textChanges(firstName)
