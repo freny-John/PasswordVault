@@ -151,7 +151,7 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
         mAdd = (FloatingActionButton) rootView.findViewById(R.id.myFAB);
         mAdd.setOnClickListener(this);
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        mLayoutManager = new LinearLayoutManager(myActivity);
         mRecyclerView.setLayoutManager(mLayoutManager);
         noItems=(TextView) rootView.findViewById(R.id.noItems);
         mToolbar = (Toolbar)rootView. findViewById(R.id.my_toolbar);
@@ -204,12 +204,12 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
                 mAccountListItem.setAccountId(mCursor.getInt(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData._ID)));
                 mAccountListItem.setAccountName(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.accountName)));
                 mAccountListItem.setUsername(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.accountUsername)));
-                mAccountListItem.setPassword(Crypto.getPassword(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.accountPassword)), getActivity()));
+                mAccountListItem.setPassword(Crypto.getPassword(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.accountPassword)), myActivity));
                 mAccountListItem.setDetails(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.accountNotes)));
                 mAccountList.add(mAccountListItem); //add the item
                 mCursor.moveToNext();
             }
-            mAdapter = new AccountAdapter(mAccountList,getActivity());
+            mAdapter = new AccountAdapter(mAccountList,myActivity);
             mRecyclerView.setAdapter(mAdapter);
 
         }

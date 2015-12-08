@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements AddAccountFragmen
     }
 
     private void addAccountListFragment() {
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         AccountListFragment fragment = new AccountListFragment();
         transaction.replace(R.id.fragment_container, fragment);
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements AddAccountFragmen
     }
 
     public void addAddAccountFragment() {
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         AddAccountFragment fragment = new AddAccountFragment();
         transaction.replace(R.id.fragment_container, fragment).addToBackStack("AccountListFragment");
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements AddAccountFragmen
         overridePendingTransition(R.anim.splashfadeout, R.anim.bottom_up);
     }
     public void addAccountDetailsFragment(AccountListItem mAccount) {
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         DetailsFragment fragment = new DetailsFragment();
         Bundle b=new Bundle();
@@ -93,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements AddAccountFragmen
     @Override
     public void onFragmentInteraction(String msg) {
         PLog.e("onFragmentInteraction");
-        //  bus.post(new Message(getString(R.string.success_message)));
         Snackbar.make(findViewById(R.id.fragment_container),msg,Snackbar.LENGTH_SHORT).show();
     }
 

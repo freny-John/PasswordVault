@@ -37,14 +37,16 @@
 
         android:layout_height="106dp"
         android:layout_marginTop="110dp"
-        android:layout_width="130dp"
+        android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal">
         <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
             android:id="@+id/head_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome!"
+            android:singleLine="true"
             android:textSize="20sp"
+            android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="120dp"
             android:layout_centerHorizontal="true"
@@ -52,7 +54,7 @@
             android:layout_above="@+id/text_head_sub" />
         <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
             android:id="@+id/text_head_sub"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:text="Lorem ipsum djj j jnhfuhuf Signup Here"
             android:textSize="15sp"

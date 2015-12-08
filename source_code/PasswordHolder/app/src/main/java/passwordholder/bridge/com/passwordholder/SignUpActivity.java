@@ -19,7 +19,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        signUpContainer =(FrameLayout) findViewById(R.id.signup_container);
+        signUpContainer =(FrameLayout) findViewById(R.id.fragment_container);
         headerPane =(FrameLayout) findViewById(R.id.header_pane);
         imageLogo = (ImageView) findViewById(R.id.image_logo);
 
@@ -36,7 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
         Fragment newFragment = new SignUpFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.setCustomAnimations(R.anim.mainfadein, R.anim.splashfadeout);
-        transaction.replace(R.id.signup_container, newFragment);
+        transaction.replace(R.id.fragment_container, newFragment);
         transaction.commit();
     }
 

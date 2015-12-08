@@ -50,6 +50,11 @@
     <string name="answer">Answer</string>
     <string name="question">Enter Your Question</string>
     <string name="search_menu">Search</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="login_text">Enter your 4 digit pin to login.</string>
+    <string name="wrong_pin_msg">You entered wrong pin.\n Please try again.</string>
+    <string name="clear_all">clear all</string>
+    <string name="error_security_answer">Do you forgot your security answer?</string>
 
     <string-array name="qn_array">
         <item>What is the name of your favorite childhood friend?</item>

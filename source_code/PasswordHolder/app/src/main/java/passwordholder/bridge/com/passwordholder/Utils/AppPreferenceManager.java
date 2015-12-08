@@ -16,6 +16,8 @@ public class AppPreferenceManager
     public static final String USER_PASSWORD="Password";
     public static final String SECURITY_QUESTION="SecurityQuestion";
     public static final String SECURITY_ANSWER="SecurityAnswer";
+    public static final int MAX_ATTEMPTS=4;
+    public static final String FAILED_ATTEMPTS="FailedAttempts";
 
     public static void setValue(Context mContext,String key,String value) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext);
@@ -27,6 +29,23 @@ public class AppPreferenceManager
     public static String getValue(Context mContext,String key) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         return Crypto.getEncrypt(prefs.getString(key, ""), mContext);
+
+    }
+    public static void incrementIntegerValue(Context mContext, String key) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(key, (sharedPref.getInt(key, 0)+1));
+        editor.commit();
+    } public static void resetIntegerValue(Context mContext,String key) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(key, 0);
+        editor.commit();
+    }
+
+    public static int getIntegerValue(Context mContext,String key) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        return prefs.getInt(key, 0);
     }
 
     public static void setFirstTimeUser(Context mContext,boolean firstTimeUser) {

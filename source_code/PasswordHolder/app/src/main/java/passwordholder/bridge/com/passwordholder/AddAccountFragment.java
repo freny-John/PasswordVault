@@ -56,8 +56,12 @@ public class AddAccountFragment extends Fragment {
         accountLayoutPassword=(TextInputLayout)v.findViewById(R.id.account_layout_password);
 
         mToolbar = (Toolbar)v. findViewById(R.id.my_toolbar);
-        myActivity.setSupportActionBar(mToolbar);
-        myActivity.getSupportActionBar().setTitle("");
+        try {
+            myActivity.setSupportActionBar(mToolbar);
+            myActivity.getSupportActionBar().setTitle("");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -73,14 +77,14 @@ public class AddAccountFragment extends Fragment {
                 if(!TextUtils.isEmpty(account_password)){
                     addAccountDetailsToDb(account_name,account_username,account_password);
                 }else{
-                    accountLayoutPassword.setError(getActivity().getString(R.string.password_error));
+                    accountLayoutPassword.setError(myActivity.getString(R.string.password_error));
 
                 }
             }else{
-                accountUsername.setError(getActivity().getString(R.string.username_error));
+                accountUsername.setError(myActivity.getString(R.string.username_error));
             }
         }else{
-            accountName.setError(getActivity().getString(R.string.account_error));
+            accountName.setError(myActivity.getString(R.string.account_error));
         }
     }
 
@@ -90,11 +94,11 @@ public class AddAccountFragment extends Fragment {
         ContentValues cv=new ContentValues();
         cv.put(ProviderMetadata.accountTableMetaData.accountName,account_name);
         cv.put(ProviderMetadata.accountTableMetaData.accountUsername,account_username);
-        cv.put(ProviderMetadata.accountTableMetaData.accountPassword, Crypto.setPassword(account_password,getActivity()));
+        cv.put(ProviderMetadata.accountTableMetaData.accountPassword, Crypto.setPassword(account_password,myActivity));
         cv.put(ProviderMetadata.accountTableMetaData.accountNotes,accountDetails.getText().toString().trim());
-        getActivity().getContentResolver().insert(ProviderMetadata.accountTableMetaData.CONTENT_URI,cv);
+        myActivity.getContentResolver().insert(ProviderMetadata.accountTableMetaData.CONTENT_URI,cv);
         if (mListener != null) {
-            mListener.onFragmentInteraction(getActivity().getString(R.string.success_message));
+            mListener.onFragmentInteraction(myActivity.getString(R.string.success_message));
             getFragmentManager().popBackStack();    //close fragment after adding account
         }
     }

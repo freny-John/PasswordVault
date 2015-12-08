@@ -22,7 +22,7 @@ public class SignUpFragment extends Fragment {
 
     Button SignUp;
     EditText firstName, lastName, Email;
-    Activity mActivity;
+    Activity myActivity;
 
     public static SignUpFragment newInstance(String param1, String param2) {
         SignUpFragment fragment = new SignUpFragment();
@@ -64,7 +64,7 @@ public class SignUpFragment extends Fragment {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         //  transaction.setCustomAnimations(R.anim.mainfadein, R.anim.splashfadeout);
         transaction.setCustomAnimations(R.anim.slide_right,R.anim.slide_left);
-        transaction.replace(R.id.signup_container, newFragment);
+        transaction.replace(R.id.fragment_container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
@@ -105,9 +105,9 @@ public class SignUpFragment extends Fragment {
 
     private void storeUserCredentials(String username, String password) {
 
-        AppPreferenceManager.setUserEmail(getActivity(), username);
-        AppPreferenceManager.setUserPassword(getActivity(), password);
-        //  AppPreferenceManager.setFirstTimeUser(getApplicationContext(),false);
+        AppPreferenceManager.setUserEmail(myActivity, username);
+        AppPreferenceManager.setUserPassword(myActivity, password);
+         AppPreferenceManager.setFirstTimeUser(myActivity, false);
     }
 
     private void showSnackBarOnError(View v ,String message){
@@ -156,7 +156,7 @@ public class SignUpFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mActivity = (Activity) activity;
+            myActivity = activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");

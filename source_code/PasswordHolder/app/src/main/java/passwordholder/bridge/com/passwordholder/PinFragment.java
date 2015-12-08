@@ -1,6 +1,7 @@
 package passwordholder.bridge.com.passwordholder;
 
 import android.app.Activity;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -10,14 +11,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
+import passwordholder.bridge.com.passwordholder.Utils.PLog;
 
 public class PinFragment extends Fragment implements View.OnClickListener{
 
     Button key1,key2,key3,key4,key5,key6,key7,key8,key9,key0,keyBackSpace,confirm;
     Button ind1,ind2,ind3,ind4;
-    static String passCode ="";
-    static int count=0;
+    static String passCode;
+    static int count;
     Activity myActivity;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,17 +40,31 @@ public class PinFragment extends Fragment implements View.OnClickListener{
         super.onAttach(activity);
         try {
             if(myActivity==null){
-                myActivity =(Activity)activity;
+                myActivity = activity;
             }
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnDetailFragmentInteractionListener");
         }
     }
-    private void initUi(View v) {
 
+    private void initUi(View v) {
+        clearPasscode();
         initComponents(v);
         setListeners();
+    }
+
+    private void clearPasscode() {
+        passCode ="";
+        count=0;
+
+    }
+
+    private void resetimages() {
+        ind1.setPressed(false);
+        ind2.setPressed(false);
+        ind3.setPressed(false);
+        ind4.setPressed(false);
     }
 
     private void setListeners() {
@@ -94,7 +111,7 @@ public class PinFragment extends Fragment implements View.OnClickListener{
         Fragment newFragment = new SecurityQnFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.setCustomAnimations(R.anim.slide_right,R.anim.slide_left);
-        transaction.replace(R.id.signup_container, newFragment);
+        transaction.replace(R.id.fragment_container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
@@ -103,10 +120,7 @@ public class PinFragment extends Fragment implements View.OnClickListener{
     private void setIndicator() {
         switch (count){
             case 0:
-                ind1.setPressed(false);
-                ind2.setPressed(false);
-                ind3.setPressed(false);
-                ind4.setPressed(false);
+                resetimages();
                 break;
             case 1:
                 ind1.setPressed(true);
@@ -150,6 +164,7 @@ public class PinFragment extends Fragment implements View.OnClickListener{
             case R.id.key7:
             case R.id.key8:
             case R.id.key9:
+                PLog.e("checking...count:"+count+"\npasscode:"+passCode);
                 if (count < 4) {
                     /**Adding password*/
                     count++;
@@ -162,10 +177,10 @@ public class PinFragment extends Fragment implements View.OnClickListener{
                     numberKeyActivate(false);
                 }
                 break;
+
             case R.id.keyb:
                 if (confirm.getVisibility() == View.VISIBLE){
-                    confirm.setEnabled(false);
-                    numberKeyActivate(true);
+                    enableNumberKeys();
                 }
                 if(count>0){
                     count--;
@@ -174,12 +189,59 @@ public class PinFragment extends Fragment implements View.OnClickListener{
                 setIndicator();
                 break;
             case R.id.confirm:
-                AppPreferenceManager.setUserPassword(myActivity, passCode);
-                addSecurityFragment();
+
+                onConfirmClick(view);
             default:
                 break;
 
         }
+    }
+
+    private void onConfirmClick(View view) {
+
+        if(myActivity instanceof LoginActivity) {
+            if(passCode.equals(AppPreferenceManager.getUserPassword(myActivity))) {
+                AppPreferenceManager.resetIntegerValue(myActivity,AppPreferenceManager.FAILED_ATTEMPTS);
+                ((LoginActivity) myActivity).gotoMainActivity();
+            }
+            else
+            {
+                onInvalidPin(view);
+
+            }
+        }
+        else
+        {
+            AppPreferenceManager.setUserPassword(myActivity, passCode);
+            addSecurityFragment();
+        }
+    }
+
+    private void onInvalidPin(View view) {
+        AppPreferenceManager.incrementIntegerValue(myActivity, AppPreferenceManager.FAILED_ATTEMPTS);
+        if( AppPreferenceManager.getIntegerValue(myActivity, AppPreferenceManager.FAILED_ATTEMPTS)<=AppPreferenceManager.MAX_ATTEMPTS) {
+            PLog.e("not reached max" );
+
+            Snackbar.make(view.getRootView(), R.string.wrong_pin_msg, Snackbar.LENGTH_LONG).setAction(R.string.clear_all, view1 -> {
+                clearPasscode();
+                resetimages();
+                enableNumberKeys();
+            }).show();
+        }
+        else
+        {
+            Snackbar.make(view.getRootView(), R.string.wrong_pin_msg, Snackbar.LENGTH_LONG).setAction(R.string.clear_all, view1 -> {
+                clearPasscode();
+                resetimages();
+                enableNumberKeys();
+            }).show();
+            addSecurityFragment();
+        }
+    }
+
+    private void enableNumberKeys() {
+        confirm.setEnabled(false);
+        numberKeyActivate(true);
     }
 
     public void numberKeyActivate(boolean enabled){

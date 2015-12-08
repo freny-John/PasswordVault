@@ -32,11 +32,14 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
     private OnDetailFragmentInteractionListener mListener;
     AccountListItem currentAccountListItem;
     EditText accountName,accountUsername,accountPassword,accountDetails;
-    TextInputLayout accountLayoutName,accountLayoutUsername,accountLayoutPassword,accountLayoutDetails;
+    TextInputLayout accountLayoutName;
+    TextInputLayout accountLayoutUsername;
+    TextInputLayout accountLayoutPassword;
     MainActivity myActivity;
     Toolbar mToolbar;
     ImageView deleteBtn,editBtn;
     Bus bus;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -155,14 +158,14 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
                 if(!TextUtils.isEmpty(account_password)){
                     addAccountDetailsToDb(account_name,account_username,account_password);
                 }else{
-                    accountLayoutPassword.setError(getActivity().getString(R.string.password_error));
+                    accountLayoutPassword.setError(myActivity.getString(R.string.password_error));
 
                 }
             }else{
-                accountUsername.setError(getActivity().getString(R.string.username_error));
+                accountUsername.setError(myActivity.getString(R.string.username_error));
             }
         }else{
-            accountName.setError(getActivity().getString(R.string.account_error));
+            accountName.setError(myActivity.getString(R.string.account_error));
         }
     }
 
@@ -172,11 +175,10 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
         ContentValues cv=new ContentValues();
         cv.put(ProviderMetadata.accountTableMetaData.accountName,account_name);
         cv.put(ProviderMetadata.accountTableMetaData.accountUsername,account_username);
-        cv.put(ProviderMetadata.accountTableMetaData.accountPassword, Crypto.setPassword(account_password, getActivity()));
+        cv.put(ProviderMetadata.accountTableMetaData.accountPassword, Crypto.setPassword(account_password, myActivity));
         cv.put(ProviderMetadata.accountTableMetaData.accountNotes, accountDetails.getText().toString().trim());
-        getActivity().getContentResolver().delete(ProviderMetadata.accountTableMetaData.CONTENT_URI, ProviderMetadata.accountTableMetaData._ID + "=" + currentAccountListItem.getAccountId(), null);
-        getActivity().getContentResolver().insert(ProviderMetadata.accountTableMetaData.CONTENT_URI, cv);
-        //getActivity().getContentResolver().update(ProviderMetadata.accountTableMetaData.CONTENT_URI, cv, ProviderMetadata.accountTableMetaData.accountId+"="+currentAccountListItem.getAccountId(),null);
+        myActivity.getContentResolver().delete(ProviderMetadata.accountTableMetaData.CONTENT_URI, ProviderMetadata.accountTableMetaData._ID + "=" + currentAccountListItem.getAccountId(), null);
+        myActivity.getContentResolver().insert(ProviderMetadata.accountTableMetaData.CONTENT_URI, cv);
         Snackbar snackbar = Snackbar.make(editBtn.getRootView(), "Changes Added Successfully", Snackbar.LENGTH_SHORT);
         View snackBarView = snackbar.getView();
         snackBarView.setBackgroundColor(Color.GREEN);
@@ -200,7 +202,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
     private int deleteItem(int accountId) {
         String mSelectionClause = ProviderMetadata.accountTableMetaData._ID + " LIKE ?";
         String[] mSelectionArgs = {""+accountId};
-        return getActivity().getContentResolver().delete(ProviderMetadata.accountTableMetaData.CONTENT_URI,
+        return myActivity.getContentResolver().delete(ProviderMetadata.accountTableMetaData.CONTENT_URI,
                 mSelectionClause,mSelectionArgs);
     }
 
