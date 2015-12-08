@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <color name="primary">#F2395B</color>
+    <color name="default_color">#DE000000</color>
+    <color name="pressed_text_color">#ffffff</color>
+    <color name="bg">#ffffff</color>
+    <color name="accent">#F7F7F7</color>
+    <color name="primary_dark">#88f70f0e</color>
+    <color name="secondary">#72AE2D</color>
+    <color name="text_color_primary">#FFFFFF</color>
+    <color name="bright_pink">#FF007F</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#FF7F00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="chartreuse">#7FFF00</color>
+    <color name="green">#00FF00</color>
+    <color name="spring_green">#00FF7F</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="azure">#007FFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="violet">#7F00FF</color>
+    <color name="magenta">#FF00FF</color>
+
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow">#10000000</color>
+    <color name="black_de">#DE000000</color>
+    <color name="window_background">#00000000</color>
+    <color name="edittext_bg">#ffffff</color>
+
+    <array name="colors">
+        <item>@color/bright_pink</item>
+        <item>@color/red</item>
+        <item>@color/orange</item>
+        <item>@color/yellow</item>
+        <item>@color/chartreuse</item>
+        <item>@color/green</item>
+        <item>@color/spring_green</item>
+        <item>@color/cyan</item>
+        <item>@color/azure</item>
+        <item>@color/blue</item>
+        <item>@color/violet</item>
+        <item>@color/magenta</item>
+    </array>
+</resources>

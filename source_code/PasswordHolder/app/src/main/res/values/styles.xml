@@ -1,0 +1,55 @@
+
+<resources>
+    <!-- inherit from the material theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="keystyle" parent="keyspec">
+        <item name="android:background">@drawable/passwordkey_selecter</item>
+        <item name="android:textColor">@color/key_text_color</item>
+
+    </style>
+    <style name="keyset" parent="keyspec">
+        <item name="android:background">@drawable/set_key_selecter</item>
+        <item name="android:textColor">@color/bg</item>
+
+    </style>
+    <style name="keybackspace" parent="keyspec">
+        <item name="android:background">@drawable/bs_key_selecter</item>
+        <item name="android:textColor">@color/bs_key_text_color</item>
+
+    </style>
+    <style name="keyspec" parent="android:Widget.Button">
+
+        <item name="android:layout_marginLeft">@dimen/padding_bw_keys</item>
+        <item name="android:layout_marginRight">@dimen/padding_bw_keys</item>
+        <item name="android:layout_marginTop">@dimen/padding_top</item>
+        <item name="android:layout_marginBottom">@dimen/padding_top</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/key_text_size</item>
+    </style>
+
+    <style name="key_indicate_style"  parent="android:Widget.Button">
+        <item name="android:background">@drawable/indicate_key_selecter</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="buttonStyle"  parent="android:Widget.Button">
+        <item name="android:background">@color/primary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingRight">@dimen/button_padding</item>
+        <item name="android:paddingLeft">@dimen/button_padding</item>
+        <item name="android:paddingTop">@dimen/button_right_padding</item>
+        <item name="android:paddingBottom">@dimen/button_right_padding</item>
+    </style>
+
+</resources>

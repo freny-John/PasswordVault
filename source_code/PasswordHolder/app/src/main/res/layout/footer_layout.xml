@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:visibility="invisible"
+    android:layout_width="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_height="120dp"
+    tools:showIn="@layout/activity_sign_up">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="20dp"
+        android:background="@color/primary" />
+
+    <passwordholder.bridge.com.passwordholder.Utils.TriangleBackgroundView
+        android:layout_gravity="center_horizontal|top"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        custom:tr_color_red="false" />
+
+</FrameLayout>

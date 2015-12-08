@@ -1,0 +1,31 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="list_item_text_head_size">16dp</dimen>
+    <dimen name="list_item_text_sub_size">16dp</dimen>
+    <dimen name="margintop">4dp</dimen>
+    <dimen name="marginbottom">4dp</dimen>
+    <dimen name="marginleft">0dp</dimen>
+    <dimen name="marginright">0dp</dimen>
+
+    <dimen name="dialog_paddingside">24dp</dimen>
+    <dimen name="dialog_paddingtop">24dp</dimen>
+    <dimen name="dialog_padding_buttons">8dp</dimen>
+    <dimen name="dialog_button_height">36dp</dimen>
+
+<!--
+    keys dimens
+-->
+
+    <dimen name="key_width">60dp</dimen>
+    <dimen name="key_inner_radius">28dp</dimen><!--keywidth/2-2dp since thickness is 2dp-->
+    <dimen name="padding_bw_keys">11dp</dimen>
+    <dimen name="padding_top">6dp</dimen>
+    <dimen name="ind_width">16dp</dimen>
+    <dimen name="button_padding">16dp</dimen>
+    <dimen name="button_right_padding">6dp</dimen>
+    <dimen name="key_text_size">22sp</dimen>
+    <dimen name="copy_right_margin">20dp</dimen>
+
+</resources>

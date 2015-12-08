@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright 2014 The Android Open Source Project
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+     http://www.apache.org/licenses/LICENSE-2.0
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/account_list_container"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:background="@color/primary"
+        app:theme="@style/AppTheme" >
+        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/accounts"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+        <!-- <com.search.material.library.MaterialSearchView
+             android:id="@+id/search_view"
+             style="@style/MaterialSearchViewStyle"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             />-->
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout
+        android:layout_below="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:layout_margin="10dp"
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:paddingTop="15dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:id="@+id/noItems"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:text="No Accounts Found"/>
+        </RelativeLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/myFAB"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add"
+            app:elevation="4dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:pressedTranslationZ="8dp"
+            />
+    </RelativeLayout>
+</RelativeLayout>

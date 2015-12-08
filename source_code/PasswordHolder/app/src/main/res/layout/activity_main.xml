@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+ <!--   <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:background="@color/primary"
+        app:theme="@style/AppTheme" >
+        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/accounts"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+      &lt;!&ndash;  <com.search.material.library.MaterialSearchView
+            android:id="@+id/search_view"
+            style="@style/MaterialSearchViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />&ndash;&gt;
+    </android.support.v7.widget.Toolbar>-->
+
+    <FrameLayout
+        android:layout_below="@+id/my_toolbar"
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</RelativeLayout>

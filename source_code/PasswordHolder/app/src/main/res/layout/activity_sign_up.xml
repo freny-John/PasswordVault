@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/edittext_bg"
+    tools:context="passwordholder.bridge.com.passwordholder.SignUpActivity">
+  <!--  <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">-->
+    <include layout="@layout/header_layout" />
+
+    <FrameLayout
+        android:id="@+id/signup_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fitsSystemWindows="true"
+        android:layout_below="@+id/header_pane"
+        >
+    <!--    <fragment android:name="passwordholder.bridge.com.passwordholder.SignUpFragment"
+            android:id="@+id/signup_fragment"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />-->
+    </FrameLayout>
+   <!-- </LinearLayout>
+    </ScrollView>-->
+</RelativeLayout>

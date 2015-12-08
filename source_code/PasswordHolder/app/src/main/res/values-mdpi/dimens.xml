@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--
+    keys spec
+-->
+    <dimen name="key_width">44dp</dimen>
+    <dimen name="key_inner_radius">20dp</dimen><!--keywidth/2-2dp since thickness is 2dp-->
+    <dimen name="padding_bw_keys">11dp</dimen>
+    <dimen name="padding_top">6dp</dimen>
+    <dimen name="ind_width">16dp</dimen>
+    <dimen name="button_padding">16dp</dimen>
+    <dimen name="button_right_padding">6dp</dimen>
+    <dimen name="key_text_size">18sp</dimen>
+
+
+</resources>

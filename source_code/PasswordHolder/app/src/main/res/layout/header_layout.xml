@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header_pane"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:showIn="@layout/activity_sign_up">
+
+    <passwordholder.bridge.com.passwordholder.Utils.TriangleBackgroundView
+        android:layout_marginTop="110dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        custom:tr_color_red="true"
+        android:layout_alignParentTop="true"></passwordholder.bridge.com.passwordholder.Utils.TriangleBackgroundView>
+
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/primary">
+
+        <ImageView
+            android:id="@+id/image_logo"
+            android:layout_width="75dp"
+            android:layout_marginTop="40dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+
+        android:layout_height="106dp"
+        android:layout_marginTop="110dp"
+        android:layout_width="130dp"
+        android:layout_gravity="center_horizontal">
+        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            android:id="@+id/head_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome!"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:layout_above="@+id/text_head_sub" />
+        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            android:id="@+id/text_head_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum djj j jnhfuhuf Signup Here"
+            android:textSize="15sp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"
+            />
+    </RelativeLayout>
+</FrameLayout>
