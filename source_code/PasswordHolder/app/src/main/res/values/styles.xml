@@ -10,7 +10,8 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowContentTransitions">true</item>
     </style>
-
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowActionBar">false</item></style>
     <style name="keystyle" parent="keyspec">
         <item name="android:background">@drawable/passwordkey_selecter</item>
         <item name="android:textColor">@color/key_text_color</item>

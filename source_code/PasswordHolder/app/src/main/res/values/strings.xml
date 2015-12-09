@@ -57,6 +57,9 @@
     <string name="error_security_answer">Do you forgot your security answer?</string>
     <string name="ver_txt">get verification code</string>
     <string name="network_problem">Please check your connection</string>
+    <string name="security_qn">Security Question</string>
+    <string name="signup_sub">Set your security question and answer</string>
+    <string name="login_subtitle">Give your answer</string>
 
     <string-array name="qn_array">
         <item>What is the name of your favorite childhood friend?</item>

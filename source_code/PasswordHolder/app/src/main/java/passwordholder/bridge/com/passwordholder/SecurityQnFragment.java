@@ -2,6 +2,7 @@ package passwordholder.bridge.com.passwordholder;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -30,7 +31,18 @@ public class SecurityQnFragment extends Fragment {
     Activity myActivity;
     boolean isFromSignUp=true;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(myActivity!=null){
+            if(myActivity instanceof SignUpActivity)
+                ((SignUpActivity) myActivity).setTitleTexts(myActivity.getString(R.string.security_qn),myActivity.getString(R.string.signup_sub)); 
+            else if(myActivity instanceof LoginActivity)
+                ((LoginActivity) myActivity).setTitleTexts(myActivity.getString(R.string.security_qn), myActivity.getString(R.string.login_subtitle));
 
+
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

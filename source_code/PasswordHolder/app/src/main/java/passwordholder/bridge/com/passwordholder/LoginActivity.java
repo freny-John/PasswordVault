@@ -36,6 +36,11 @@ public class LoginActivity extends AppCompatActivity {
         textHeadSub.setText(R.string.login_text);
     }
 
+    public void setTitleTexts(String title,String sub){
+        headText.setText(title);
+        textHeadSub.setText(sub);
+    }
+
     public void gotoMainActivity() {
         Intent startMain = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(startMain);

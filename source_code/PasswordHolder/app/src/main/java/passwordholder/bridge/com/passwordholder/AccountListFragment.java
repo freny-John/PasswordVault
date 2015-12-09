@@ -28,11 +28,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -155,8 +157,14 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
         mRecyclerView.setLayoutManager(mLayoutManager);
         noItems=(TextView) rootView.findViewById(R.id.noItems);
         mToolbar = (Toolbar)rootView. findViewById(R.id.my_toolbar);
+
         myActivity.setSupportActionBar(mToolbar);
         myActivity.getSupportActionBar().setTitle(" ");
+        myActivity.getSupportActionBar().setDisplayShowHomeEnabled(true); // show or hide the default home button
+        myActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        myActivity.getSupportActionBar().setDisplayShowCustomEnabled(true); // enable overriding the default toolbar layout
+        myActivity.getSupportActionBar().setDisplayShowTitleEnabled(false);
+        myActivity.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         return rootView;
     }
 

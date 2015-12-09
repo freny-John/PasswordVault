@@ -25,12 +25,16 @@
         android:minHeight="?attr/actionBarSize"
         android:elevation="4dp"
         android:background="@color/primary"
-        app:theme="@style/AppTheme" >
+        app:theme="@style/AppBaseTheme"
+        android:fitsSystemWindows="true"
+        >
         <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/accounts"
             android:gravity="center"
+            android:layout_marginLeft="64dp"
+            android:background="@color/primary"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
             android:id="@+id/toolbar_title" />
