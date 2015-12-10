@@ -179,7 +179,8 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
 
         Fragment newFragment = new AddAccountFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(R.anim.mainfadein, R.anim.splashfadeout);
+        transaction.setCustomAnimations(R.anim.slide_right, R.anim.slide_left);
+        //transaction.setCustomAnimations(R.anim.bottom_up, R.anim.splashfadeout);
         transaction.replace(R.id.fragment_container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();

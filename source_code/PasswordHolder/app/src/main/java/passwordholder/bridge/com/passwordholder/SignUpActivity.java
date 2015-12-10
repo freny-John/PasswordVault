@@ -23,6 +23,8 @@ public class SignUpActivity extends AppCompatActivity {
         signUpContainer =(FrameLayout) findViewById(R.id.fragment_container);
         headerPane =(FrameLayout) findViewById(R.id.header_pane);
         imageLogo = (ImageView) findViewById(R.id.image_logo);
+        headText= (TextView) findViewById(R.id.head_text);
+        textHeadSub= (TextView) findViewById(R.id.text_head_sub);
         headText.setText(R.string.welcome_back);
         textHeadSub.setText(R.string.login_text);
 

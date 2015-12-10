@@ -58,10 +58,11 @@ public class MainActivity extends AppCompatActivity implements AddAccountFragmen
         Bundle b=new Bundle();
         b.putSerializable("item",mAccount);
         fragment.setArguments(b);
+        transaction.setCustomAnimations(R.anim.slide_right, R.anim.slide_left);
         transaction.replace(R.id.fragment_container, fragment).addToBackStack("AccountListFragment");
-        transaction.setCustomAnimations(R.anim.splashfadeout, R.anim.bottom_up);
         transaction.commit();
-        overridePendingTransition(R.anim.splashfadeout, R.anim.bottom_up);
+        //overridePendingTransition(R.anim.splashfadeout, R.anim.bottom_up);
+       // overridePendingTransition(R.anim.splashfadeout, R.anim.bottom_up);
     }
 
     @Override
@@ -122,8 +123,6 @@ public class MainActivity extends AppCompatActivity implements AddAccountFragmen
     public void getMessage(Message msg){
         PLog.e("getMessage");
         bus.post(new Message(getString(R.string.success_message)));
-
-
     }
 
     @Override

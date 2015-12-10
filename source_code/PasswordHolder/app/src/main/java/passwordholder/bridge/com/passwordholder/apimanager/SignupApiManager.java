@@ -2,7 +2,6 @@ package passwordholder.bridge.com.passwordholder.apimanager;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.design.widget.Snackbar;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -14,32 +13,37 @@ import passwordholder.bridge.com.passwordholder.Utils.CommonUtils;
  * Created by Anu on 12/8/2015.
  */
 
-public class ResetPinApiManager extends AsyncTask<Void, Void, Boolean>{
+public class SignupApiManager extends AsyncTask<Void, Void, Boolean>{
 
-    String user_id;
+    String first_name,last_name,email_id;
     String response;
     String url="/reset_pin";
     Context c;
     onHttpListener monHttpListener;
 
-    public ResetPinApiManager(Context c,String user_id,onHttpListener monHttpListener)
+    public SignupApiManager(Context c, String first_name,String last_name,String email_id, onHttpListener monHttpListener)
     {
         this.c=c;
-        this.user_id=user_id;
+        this.first_name=first_name;
+        this.last_name=last_name;
+        this.email_id=email_id;
         this.monHttpListener=monHttpListener;
 
     }
-    public String getResponse(Context c,String user_id,onHttpListener monHttpListener) {
+    public String getResponse() {
 
         response="";
         if(PasswordApiclient.isOnline(c)){
 
             HashMap<String,String> resetApi=new HashMap<String,String>();
-            resetApi.put("user_id",user_id);
+            resetApi.put("first_name",first_name);
+            resetApi.put("last_name",last_name);
+            resetApi.put("email_id",email_id);
 
             try {
                 response= PasswordApiclient.postUrl(url, CommonUtils.getJSON(resetApi));
             } catch (IOException e) {
+                monHttpListener.onError(c.getString(R.string.io_exception));
                 response="";
                 e.printStackTrace();
             }
@@ -55,7 +59,7 @@ public class ResetPinApiManager extends AsyncTask<Void, Void, Boolean>{
 
     @Override
     protected Boolean doInBackground(Void... voids) {
-        getResponse(c,user_id,monHttpListener);
+        getResponse();
         return null;
     }
 }

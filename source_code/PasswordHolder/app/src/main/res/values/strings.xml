@@ -60,6 +60,11 @@
     <string name="security_qn">Security Question</string>
     <string name="signup_sub">Set your security question and answer</string>
     <string name="login_subtitle">Give your answer</string>
+    <string name="io_exception">IO Exception</string>
+    <string name="enter_your_verification_code">Enter your verification code here</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="verification_code1">Verification Code</string>
+    <string name="entr_code">Enter your verification code</string>
 
     <string-array name="qn_array">
         <item>What is the name of your favorite childhood friend?</item>

@@ -75,7 +75,17 @@ public class CommonUtils {
 	}
 
 
-	public static String getJSON(Map<String, Object> input)
+	public static String getJSON(Map<String, String> input)
+	{
+		try
+		{
+			final JSONObject json=new JSONObject(input);
+			return json.toString();
+
+		}catch (NullPointerException e) {
+			return null;
+		}
+	}public static String getJSONFromObject(Map<String, Object> input)
 	{
 		try
 		{

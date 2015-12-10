@@ -17,7 +17,10 @@ import android.widget.EditText;
 import java.util.HashMap;
 
 import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
+import passwordholder.bridge.com.passwordholder.Utils.PLog;
 import passwordholder.bridge.com.passwordholder.Utils.ValidationUtils;
+import passwordholder.bridge.com.passwordholder.apimanager.PasswordApiclient;
+import passwordholder.bridge.com.passwordholder.apimanager.onHttpListener;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
@@ -25,7 +28,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 
-public class SignUpFragment extends Fragment {
+public class SignUpFragment extends Fragment implements onHttpListener {
 
     Button SignUp;
     EditText firstName, lastName, Email;
@@ -176,16 +179,27 @@ public class SignUpFragment extends Fragment {
         //  mListener = null;
     }
 
-
-
-  /*  public Observable<HashMap> getNetworkCall() {
-        NetworkUtils.postUrl();
+    @Override
+    public void onError(String message) {
+        PLog.e("Signup fragment on error"+message);
     }
-*/
-   /* Subscription subscription = getNetworkCall()
+
+    @Override
+    public void onSuccess(String response) {
+        PLog.e("Signup fragment on response "+response);
+
+    }
+
+
+
+/* public Observable<String> getNetworkCall() {
+return "";
+    }
+
+    Subscription subscription = getNetworkCall()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Observer<HashMap>() {
+            .subscribe(new Observer<String>() {
                 @Override
                 public void onCompleted() {
 
@@ -197,11 +211,11 @@ public class SignUpFragment extends Fragment {
                 }
 
                 @Override
-                public void onNext(HashMap hashMap) {
+                public void onNext(String resp) {
 
                 }
-            });
-*/
+            });*/
+
 
 /*
     Observable<Boolean> emailObservable = RxTextView.textChanges(firstName)

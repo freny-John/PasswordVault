@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +21,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
+import passwordholder.bridge.com.passwordholder.Utils.PLog;
+import passwordholder.bridge.com.passwordholder.apimanager.ResetPinApiManager;
+import passwordholder.bridge.com.passwordholder.apimanager.onHttpListener;
 
-public class SecurityQnFragment extends Fragment {
+public class SecurityQnFragment extends Fragment implements onHttpListener {
 
     TextView title, verTxt;
     AutoCompleteTextView txtSecurityQn;
@@ -35,11 +39,11 @@ public class SecurityQnFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(myActivity!=null){
-            if(myActivity instanceof SignUpActivity)
-                ((SignUpActivity) myActivity).setTitleTexts(myActivity.getString(R.string.security_qn),myActivity.getString(R.string.signup_sub)); 
-            else if(myActivity instanceof LoginActivity)
+            if(myActivity instanceof SignUpActivity) {
+                ((SignUpActivity) myActivity).setTitleTexts(myActivity.getString(R.string.security_qn), myActivity.getString(R.string.signup_sub));
+            } else if(myActivity instanceof LoginActivity) {
                 ((LoginActivity) myActivity).setTitleTexts(myActivity.getString(R.string.security_qn), myActivity.getString(R.string.login_subtitle));
-
+            }
 
         }
     }
@@ -59,16 +63,24 @@ public class SecurityQnFragment extends Fragment {
         txtSecurityQn = (AutoCompleteTextView)v. findViewById(R.id.autocomplete_qn);
         securityAnswer= (EditText)v. findViewById(R.id.answer);
         btnGo=(Button)v. findViewById(R.id.btn_Go);
-        verTxt =(TextView)v. findViewById(R.id.txt_Ver);
+
         setUpUi();
-
-        verTxt.setOnClickListener(view -> {
-
-        });
+        verTxt =(TextView)v. findViewById(R.id.txt_Ver);
+        if(myActivity instanceof LoginActivity) {
+            verTxt.setOnClickListener(view -> {
+                //  new ResetPinApiManager(myActivity, "1", SecurityQnFragment.this).execute();
+                addVerificationFragment();
+            });
+        }
+        else
+        {
+            verTxt.setVisibility(View.GONE);
+        }
     }
 
     private void setUpUi() {
-
+        viewFadein(title);
+        viewSlideUp(buttonPane);
         isFromSignUp=(myActivity instanceof SignUpActivity)?true:false;
 
         if(isFromSignUp){
@@ -145,8 +157,7 @@ public class SecurityQnFragment extends Fragment {
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<String>(myActivity, android.R.layout.simple_list_item_1, countries);
         txtSecurityQn.setAdapter(adapter);
-        viewFadein(title);
-        viewSlideUp(buttonPane);
+
     }
 
     private void getSecurityQuestion() {
@@ -172,4 +183,24 @@ public class SecurityQnFragment extends Fragment {
     }
 
 
+    @Override
+    public void onError(String message) {
+        PLog.e("Error getting" + message);
+    }
+
+    @Override
+    public void onSuccess(String response) {
+    //show verification code entering page
+        PLog.e("response getting"+response);
+        addVerificationFragment();
+    }
+    private void addVerificationFragment() {
+
+        Fragment newFragment = new VerificationCodeFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.slide_right,R.anim.slide_left);
+        transaction.replace(R.id.fragment_container, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }
