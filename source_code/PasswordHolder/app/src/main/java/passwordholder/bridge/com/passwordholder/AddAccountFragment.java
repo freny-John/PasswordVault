@@ -19,6 +19,10 @@ import android.widget.EditText;
 
 import com.squareup.otto.Bus;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import passwordholder.bridge.com.passwordholder.Utils.BusProvider;
 import passwordholder.bridge.com.passwordholder.Utils.Crypto;
 import passwordholder.bridge.com.passwordholder.model.Message;
@@ -30,7 +34,7 @@ public class AddAccountFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private Button btn_add;
     EditText accountName,accountUsername,accountPassword,accountDetails;
-    TextInputLayout accountLayoutName,accountLayoutUsername,accountLayoutPassword,accountLayoutDetails;
+    //TextInputLayout accountLayoutName,accountLayoutUsername,accountLayoutPassword,accountLayoutDetails;
     MainActivity myActivity;
     Toolbar mToolbar;
     @Override
@@ -59,9 +63,9 @@ public class AddAccountFragment extends Fragment {
         accountPassword=(EditText)v.findViewById(R.id.account_password);
         accountDetails=(EditText)v.findViewById(R.id.account_details);
 
-        accountLayoutName=(TextInputLayout) v.findViewById(R.id.account_layout_name);
+       /* accountLayoutName=(TextInputLayout) v.findViewById(R.id.account_layout_name);
         accountLayoutUsername=(TextInputLayout)v.findViewById(R.id.account_layout_username);
-        accountLayoutPassword=(TextInputLayout)v.findViewById(R.id.account_layout_password);
+        accountLayoutPassword=(TextInputLayout)v.findViewById(R.id.account_layout_password);*/
 
         mToolbar = (Toolbar)v. findViewById(R.id.my_toolbar);
         try {
@@ -115,7 +119,7 @@ public class AddAccountFragment extends Fragment {
                 if(!TextUtils.isEmpty(account_password)){
                     addAccountDetailsToDb(account_name,account_username,account_password);
                 }else{
-                    accountLayoutPassword.setError(myActivity.getString(R.string.password_error));
+                   // accountLayoutPassword.setError(myActivity.getString(R.string.password_error));
 
                 }
             }else{
@@ -134,13 +138,20 @@ public class AddAccountFragment extends Fragment {
         cv.put(ProviderMetadata.accountTableMetaData.accountUsername,account_username);
         cv.put(ProviderMetadata.accountTableMetaData.accountPassword, Crypto.setPassword(account_password,myActivity));
         cv.put(ProviderMetadata.accountTableMetaData.accountNotes,accountDetails.getText().toString().trim());
+        cv.put(ProviderMetadata.accountTableMetaData.timeStamp,getDateTime());
         myActivity.getContentResolver().insert(ProviderMetadata.accountTableMetaData.CONTENT_URI,cv);
         if (mListener != null) {
             mListener.onFragmentInteraction(myActivity.getString(R.string.success_message));
             getFragmentManager().popBackStack();    //close fragment after adding account
         }
     }
-
+    private String getDateTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "dd-MM-yyyy HH:mm:ss", Locale.getDefault());/*SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "yyyy-MM-dd HH:mm:ss", Locale.getDefault());*/
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
 
     @Override
     public void onAttach(Activity activity) {

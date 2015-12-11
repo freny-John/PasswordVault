@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.otto.Bus;
 
@@ -25,21 +26,20 @@ import passwordholder.bridge.com.passwordholder.Utils.PLog;
 import passwordholder.bridge.com.passwordholder.model.AccountListItem;
 import passwordholder.bridge.com.passwordholder.model.Reload;
 import passwordholder.bridge.com.passwordholder.provider.ProviderMetadata;
+import passwordholder.bridge.com.passwordholder.uicomponents.RoundedLetterView;
 
 
 public class DetailsFragment extends Fragment implements View.OnClickListener,DeleteConfirmationDialog.OnDialogInteractionListener{
 
     private OnDetailFragmentInteractionListener mListener;
     AccountListItem currentAccountListItem;
-    EditText accountName,accountUsername,accountPassword,accountDetails;
-    TextInputLayout accountLayoutName;
-    TextInputLayout accountLayoutUsername;
+    TextView accountName,accountUsername,accountPassword,accountDetails,date;
     TextInputLayout accountLayoutPassword;
     MainActivity myActivity;
     Toolbar mToolbar;
-    ImageView deleteBtn,editBtn;
+    ImageView deleteBtn,editBtn,back;
     Bus bus;
-
+    RoundedLetterView RoundedLetterView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,15 +61,15 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
 
     private void initUi(View v) {
 
-        accountName=(EditText) v.findViewById(R.id.account_name);
-        accountUsername=(EditText)v.findViewById(R.id.account_username);
-        accountPassword=(EditText)v.findViewById(R.id.account_password);
-        accountDetails=(EditText)v.findViewById(R.id.account_details);
+        accountName=(TextView) v.findViewById(R.id.account_name);
+        accountUsername=(TextView)v.findViewById(R.id.account_username);
+        accountPassword=(TextView)v.findViewById(R.id.account_password);
+        accountDetails=(TextView)v.findViewById(R.id.account_details);
+        date=(TextView)v.findViewById(R.id.date);
+        RoundedLetterView=(RoundedLetterView) v.findViewById(R.id.detailLetterView);
 
-        accountLayoutName=(TextInputLayout) v.findViewById(R.id.account_layout_name);
-        accountLayoutUsername=(TextInputLayout)v.findViewById(R.id.account_layout_username);
-        accountLayoutPassword=(TextInputLayout)v.findViewById(R.id.account_layout_password);
         deleteBtn= (ImageView) v.findViewById(R.id.btn_delete);
+        back= (ImageView) v.findViewById(R.id.back);
         deleteBtn.setOnClickListener(this);
         editBtn= (ImageView) v.findViewById(R.id.btn_edit);
         editBtn.setOnClickListener(this);
@@ -79,7 +79,9 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
         myActivity.getSupportActionBar().setTitle("");
 
         setDetails();
-
+        back.setOnClickListener(view -> {
+            myActivity.onBackPressed();
+        });
 
     }
 
@@ -89,6 +91,8 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
             accountUsername.setText(currentAccountListItem.getUsername());
             accountPassword.setText(currentAccountListItem.getPassword());
             accountDetails.setText(currentAccountListItem.getDetails());
+            date.setText(myActivity.getString(R.string.last_modified)+currentAccountListItem.getDate());
+            RoundedLetterView.setTitleText(String.valueOf(currentAccountListItem.getAccountName().charAt(0)).toUpperCase());
         }
     }
 

@@ -181,7 +181,7 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
 
         Fragment newFragment = new AddAccountFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-      //  transaction.setCustomAnimations(R.anim.slide_right, R.anim.slide_left);
+        //  transaction.setCustomAnimations(R.anim.slide_right, R.anim.slide_left);
         //transaction.setCustomAnimations(R.anim.bottom_up, R.anim.splashfadeout);
         transaction.replace(R.id.fragment_container, newFragment);
         transaction.addToBackStack(null);
@@ -218,6 +218,8 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
                 mAccountListItem.setUsername(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.accountUsername)));
                 mAccountListItem.setPassword(Crypto.getPassword(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.accountPassword)), myActivity));
                 mAccountListItem.setDetails(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.accountNotes)));
+                mAccountListItem.setDate(mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.timeStamp))) ;
+                PLog.e("time stamp getting"+mCursor.getString(mCursor.getColumnIndex(ProviderMetadata.accountTableMetaData.timeStamp)));
                 mAccountList.add(mAccountListItem); //add the item
                 mCursor.moveToNext();
             }
@@ -236,11 +238,11 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
 
     }
 
-  /*  @Subscribe
-    public void showSnackbar(Message mMessage) {
-        Snackbar.make(mListContainer.getRootView(), mMessage.getMessage(),Snackbar.LENGTH_SHORT).show();
+    /*  @Subscribe
+      public void showSnackbar(Message mMessage) {
+          Snackbar.make(mListContainer.getRootView(), mMessage.getMessage(),Snackbar.LENGTH_SHORT).show();
 
-    }*/
+      }*/
     @Override
     public void onClick(View view) {
         switch (view.getId()){

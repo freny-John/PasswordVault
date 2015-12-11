@@ -11,7 +11,7 @@
         android:id="@+id/material_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/material_card"
+        android:background="@color/bg"
         android:orientation="vertical">
 
         <LinearLayout
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextViewBold
                 android:textColor="@color/primary"
                 android:textSize="21sp"
 
@@ -93,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <passwordholder.bridge.com.passwordholder.uicomponents.PMButton
-                        android:text="ok"
+                        android:text="OK"
                         android:textSize="14sp"
                         android:layout_marginRight="6dp"
                         android:id="@+id/btn_p"

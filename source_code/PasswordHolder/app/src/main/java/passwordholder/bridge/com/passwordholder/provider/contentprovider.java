@@ -27,12 +27,12 @@ public class contentprovider extends ContentProvider{
 	{
 		sAccountProjectionMap = new HashMap<String, String>();
 		sAccountProjectionMap.put(ProviderMetadata.accountTableMetaData._ID, ProviderMetadata.accountTableMetaData._ID);
-
 		sAccountProjectionMap.put(ProviderMetadata.accountTableMetaData.accountId, ProviderMetadata.accountTableMetaData.accountId);
 		sAccountProjectionMap.put(ProviderMetadata.accountTableMetaData.accountName, ProviderMetadata.accountTableMetaData.accountName);
 		sAccountProjectionMap.put(ProviderMetadata.accountTableMetaData.accountUsername, ProviderMetadata.accountTableMetaData.accountUsername);
 		sAccountProjectionMap.put(ProviderMetadata.accountTableMetaData.accountPassword, ProviderMetadata.accountTableMetaData.accountPassword);
 		sAccountProjectionMap.put(ProviderMetadata.accountTableMetaData.accountNotes, ProviderMetadata.accountTableMetaData.accountNotes);
+		sAccountProjectionMap.put(ProviderMetadata.accountTableMetaData.timeStamp, ProviderMetadata.accountTableMetaData.timeStamp);
 
 
 	}

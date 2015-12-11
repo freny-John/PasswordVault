@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginRight="@dimen/marginright"
-    android:layout_marginTop="@dimen/margintop"
-    android:layout_marginBottom="@dimen/marginbottom">
+   >
 
     <com.andexert.library.RippleView
         android:id="@+id/more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+
         rv_centered="true">
 
         <LinearLayout
@@ -20,8 +19,8 @@
             android:layout_height="72dp"
             android:gravity="left"
             android:id="@+id/container"
-            android:paddingLeft="5dp"
-            android:background="@color/accent"
+            android:paddingLeft="16dp"
+            android:background="@color/bg"
             >
             <passwordholder.bridge.com.passwordholder.uicomponents.RoundedLetterView
                 android:layout_gravity="center_vertical"
@@ -37,29 +36,39 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingRight="16dp"
                 android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true">
                 <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
                     android:id="@+id/account_name_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Account Name"
+                    android:textStyle="bold"
                     android:textSize="@dimen/list_item_text_head_size"
+                    android:textColor="@color/text_black"
                     />
-               <!-- <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+                <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
                     android:id="@+id/account_details_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/list_item_text_sub_size"
-                    android:text="sample text"
+                    android:text="Date Modified"
                     android:layout_below="@+id/account_name_txt"
                     />
--->
-               <!-- <View
+                </LinearLayout>
+                <View
                     android:layout_alignParentBottom="true"
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
-                    android:background="@color/secondary"></View>-->
+                    android:background="@color/dark_grey"></View>
             </RelativeLayout>
         </LinearLayout>
     </com.andexert.library.RippleView>

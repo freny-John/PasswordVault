@@ -29,9 +29,14 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:layout_below="@+id/my_toolbar">
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/topimage"
+            android:scaleType="fitXY"
+            />
         <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
             android:layout_width="fill_parent"
             android:layout_height="80dp"

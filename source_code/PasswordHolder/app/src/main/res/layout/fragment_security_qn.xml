@@ -24,22 +24,21 @@
                 android:layout_width="fill_parent"
                 android:gravity="center_horizontal"
                 android:visibility="gone"
-                android:text="Set your Security Question."
-                android:textColor="@color/primary"
+                android:text="@string/security_qn_description"
                 android:textStyle="bold"
                 android:layout_height="wrap_content" />
 
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            <!--<passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
                 android:id="@+id/description"
                 android:layout_below="@+id/title"
                 android:layout_width="fill_parent"
                 android:gravity="center_horizontal"
                 android:text="@string/security_qn_description"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" />-->
 
             <RelativeLayout
                 android:visibility="visible"
-                android:layout_below="@+id/description"
+                android:layout_below="@+id/title"
                 android:id="@+id/button_pane"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
@@ -51,18 +50,28 @@
                     android:layout_marginTop="10dp"
                     android:layout_centerHorizontal="true">
 
-                    <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:id="@+id/autocomplete_qn"
-                        android:layout_width="fill_parent"
-                        android:padding="6dp"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/question"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:imeOptions="actionNext"
-                        />
+                        <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/autocomplete_qn"
+                            android:layout_width="fill_parent"
+                            android:padding="6dp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/question"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:imeOptions="actionNext"
+                            />
+                        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+                            android:id="@+id/qn"
+                            android:layout_marginTop="8dp"
+                            android:layout_width="fill_parent"
+                            android:padding="6dp"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionGo"
+                            android:textSize="16sp"
+                            android:visibility="gone"
+                            />
 
                     <passwordholder.bridge.com.passwordholder.uicomponents.PMEditText
                         android:id="@+id/answer"
@@ -75,7 +84,7 @@
                         android:inputType="text"
                         android:imeOptions="actionGo"
                         android:singleLine="true"
-                        android:focusable="true"
+                        android:textSize="16sp"
                         android:focusableInTouchMode="true"
                         />
 

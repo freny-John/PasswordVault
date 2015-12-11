@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,12 +15,9 @@
         android:background="@color/primary"
         app:theme="@style/AppTheme" >
         <ImageView
-            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back_arrow"
-            android:padding="8dp"
-
             />
         <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
             android:layout_width="wrap_content"
@@ -34,10 +31,11 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
         android:orientation="vertical"
-        android:layout_below="@+id/my_toolbar"
-        android:id="@+id/topLayout"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
@@ -135,116 +133,63 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextViewBold
-                android:id="@+id/account_name"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/account_layout_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:enabled="false"
-                android:gravity="center"
-                android:shadowColor="@color/grey"
-                android:textColor="@color/primary"
-                android:textSize="18sp"
-                android:hint="@string/accout_type" />
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
-                android:layout_below="@+id/account_name"
-                android:id="@+id/date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:enabled="false"
-                android:gravity="center"
-                android:text="Date modified:"
-                android:padding="4dp"
-                android:textColor="@color/dark_grey"
-                android:hint="@string/accout_type" />
+                android:layout_height="wrap_content">
 
+                <EditText
+                    android:id="@+id/account_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:enabled="false"
+                    android:hint="@string/accout_type" />
+            </android.support.design.widget.TextInputLayout>
 
         </RelativeLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:padding="16dp"
-
-        android:layout_below="@+id/topLayout">
-
-
-
-
-        <LinearLayout
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/account_layout_username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:layout_height="wrap_content">
 
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/account_username" />
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextViewBold
+            <EditText
                 android:id="@+id/account_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                />
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@color/dark_grey"></View>
-        </LinearLayout>
-        <LinearLayout
+                android:inputType="textEmailAddress"
+                android:enabled="false"
+                android:hint="@string/account_username" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/account_layout_password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/password" />
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextViewBold
+            android:layout_height="wrap_content">
+
+            <EditText
                 android:id="@+id/account_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                />
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@color/dark_grey"></View>
-        </LinearLayout>
-
-
-        <LinearLayout
+                android:inputType="textPassword"
+                android:enabled="false"
+                android:hint="@string/password" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/account_layout_details"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/notes" />
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextViewBold
+            android:layout_height="wrap_content">
+
+            <EditText
                 android:id="@+id/account_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                />
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@color/dark_grey"></View>
-        </LinearLayout>
+                android:inputType="textMultiLine"
+                android:enabled="false"
+                android:hint="@string/notes" />
+        </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+
+</FrameLayout>

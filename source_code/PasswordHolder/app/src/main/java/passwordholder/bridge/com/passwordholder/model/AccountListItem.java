@@ -7,8 +7,17 @@ import java.io.Serializable;
  */
 public class AccountListItem implements Serializable{
     String accountName;
+    String date;
     String username,password,details;
     int accountId;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public String getAccountName() {
         return accountName;
