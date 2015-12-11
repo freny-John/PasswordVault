@@ -5,13 +5,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg"
     tools:context="passwordholder.bridge.com.passwordholder.PinFragment">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:background="@color/primary"
+        app:theme="@style/AppTheme"
+        android:visibility="gone">
+        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_pin"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
 
+    </android.support.v7.widget.Toolbar>
    <!-- <include layout="@layout/header_layout" />-->
     <RelativeLayout
+       android:id="@+id/keypad_container"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/header_pane">
+        android:layout_below="@+id/my_toolbar">
 
         <LinearLayout
             android:id="@+id/indicate_layout"

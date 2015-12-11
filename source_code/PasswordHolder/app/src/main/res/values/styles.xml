@@ -41,7 +41,7 @@
 
     <style name="key_indicate_style"  parent="android:Widget.Button">
         <item name="android:background">@drawable/indicate_key_selecter</item>
-        <item name="android:layout_margin">4dp</item>
+        <item name="android:layout_margin">3dp</item>
     </style>
 
     <style name="buttonStyle"  parent="android:Widget.Button">

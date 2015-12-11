@@ -22,7 +22,6 @@ import android.widget.TextView;
 
 import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
 import passwordholder.bridge.com.passwordholder.Utils.PLog;
-import passwordholder.bridge.com.passwordholder.apimanager.ResetPinApiManager;
 import passwordholder.bridge.com.passwordholder.apimanager.onHttpListener;
 
 public class SecurityQnFragment extends Fragment implements onHttpListener {
@@ -51,7 +50,7 @@ public class SecurityQnFragment extends Fragment implements onHttpListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_security_qn, container, false);
+        View v = inflater.inflate(R.layout.fragment_security_qn, container, false);
         initUi(v);
         return v;
     }

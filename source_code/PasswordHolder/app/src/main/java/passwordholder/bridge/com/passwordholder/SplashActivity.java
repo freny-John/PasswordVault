@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
 
 public class SplashActivity extends AppCompatActivity {
@@ -22,6 +24,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);
         imageLogo =(ImageView) findViewById(R.id.image_logo);
         splashContainer=(RelativeLayout) findViewById(R.id.splash_container);

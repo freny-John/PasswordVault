@@ -21,6 +21,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -59,7 +60,7 @@ import passwordholder.bridge.com.passwordholder.provider.ProviderMetadata;
  * Created by Anu on 11/26/2015.
  */
 
-public class AccountListFragment extends Fragment  implements LoaderManager.LoaderCallbacks<Cursor>,View.OnClickListener,OnResumeFragmentInterface{
+public class AccountListFragment extends Fragment  implements LoaderManager.LoaderCallbacks<Cursor>,View.OnClickListener{
 
     private static final String TAG = "AccountListFragment";
     protected RecyclerView mRecyclerView;
@@ -75,7 +76,7 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
     SearchView searchView;
     TextView noItems;
     boolean firstTime=true;
-
+    CoordinatorLayout mCoordinatorLayout;
 
 
     @Override
@@ -153,6 +154,7 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
         mAdd = (FloatingActionButton) rootView.findViewById(R.id.myFAB);
         mAdd.setOnClickListener(this);
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        mCoordinatorLayout= (CoordinatorLayout) rootView.findViewById(R.id.coordinatorLayout);
         mLayoutManager = new LinearLayoutManager(myActivity);
         mRecyclerView.setLayoutManager(mLayoutManager);
         noItems=(TextView) rootView.findViewById(R.id.noItems);
@@ -179,7 +181,7 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
 
         Fragment newFragment = new AddAccountFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(R.anim.slide_right, R.anim.slide_left);
+      //  transaction.setCustomAnimations(R.anim.slide_right, R.anim.slide_left);
         //transaction.setCustomAnimations(R.anim.bottom_up, R.anim.splashfadeout);
         transaction.replace(R.id.fragment_container, newFragment);
         transaction.addToBackStack(null);
@@ -193,7 +195,8 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         Uri uri = ProviderMetadata.accountTableMetaData.CONTENT_URI;
-        return new CursorLoader(myActivity, uri, null,null,null,null);
+        String selection=ProviderMetadata.accountTableMetaData.accountName+" COLLATE NOCASE ASC";
+        return new CursorLoader(myActivity, uri, null,null,null,selection);
     }
 
     @Override
@@ -233,11 +236,11 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
 
     }
 
-    @Subscribe
+  /*  @Subscribe
     public void showSnackbar(Message mMessage) {
         Snackbar.make(mListContainer.getRootView(), mMessage.getMessage(),Snackbar.LENGTH_SHORT).show();
 
-    }
+    }*/
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -272,8 +275,4 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
         super.onDestroy();
     }
 
-    @Override
-    public void onResumeFragment() {
-        PLog.e("onresume fragment");
-    }
 }

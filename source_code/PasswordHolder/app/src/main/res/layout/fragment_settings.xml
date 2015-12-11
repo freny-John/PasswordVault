@@ -1,10 +1,64 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg"
     tools:context="passwordholder.bridge.com.passwordholder.SettingsFragment">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:background="@color/primary"
+        app:theme="@style/AppTheme"
+        >
+        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/toolbar_title" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    </android.support.v7.widget.Toolbar>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/my_toolbar">
+        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@color/card_shadow"
+            android:text="@string/reset_pin"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:paddingLeft="16dp"
+            android:id="@+id/reset_pin"
+            android:textSize="16sp"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black_de"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"></View>
+        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@color/card_shadow"
+            android:text="@string/about_app"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:paddingLeft="16dp"
+            android:id="@+id/about"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</RelativeLayout>

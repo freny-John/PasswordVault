@@ -5,10 +5,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
 import passwordholder.bridge.com.passwordholder.Utils.PLog;
@@ -20,6 +23,8 @@ public class PinFragment extends Fragment implements View.OnClickListener{
     static String passCode;
     static int count;
     Activity myActivity;
+    Toolbar myToolbar;
+    RelativeLayout keypadContainer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,7 @@ public class PinFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.activity_pin, container, false);
+        View v = inflater.inflate(R.layout.fragment_pin, container, false);
         initUi(v);
         return v;
     }
@@ -98,11 +103,22 @@ public class PinFragment extends Fragment implements View.OnClickListener{
         key0=(Button)v. findViewById(R.id.key0);
         keyBackSpace =(Button)v. findViewById(R.id.keyb);
         confirm=(Button) v.findViewById(R.id.confirm);
+        myToolbar=(Toolbar) v.findViewById(R.id.my_toolbar);
+        keypadContainer=(RelativeLayout) v.findViewById(R.id.keypad_container);
 
         ind1=(Button)v. findViewById(R.id.ind1);
         ind2=(Button)v. findViewById(R.id.ind2);
         ind3=(Button)v. findViewById(R.id.ind3);
         ind4=(Button)v. findViewById(R.id.ind4);
+
+        if(myActivity instanceof MainActivity){
+            myToolbar.setVisibility(View.VISIBLE);
+            keypadContainer.setGravity(Gravity.CENTER);
+        }
+        else
+        {
+            myToolbar.setVisibility(View.GONE);
+        }
     }
 
 
@@ -213,7 +229,13 @@ public class PinFragment extends Fragment implements View.OnClickListener{
         else
         {
             AppPreferenceManager.setUserPassword(myActivity, passCode);
-            addSecurityFragment();
+            if(myActivity instanceof SignUpActivity) {
+                addSecurityFragment();
+            }
+            else
+            {
+                myActivity.onBackPressed();
+            }
         }
     }
 

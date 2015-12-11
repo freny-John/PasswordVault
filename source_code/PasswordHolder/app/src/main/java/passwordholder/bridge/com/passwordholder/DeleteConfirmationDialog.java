@@ -63,6 +63,16 @@ public class DeleteConfirmationDialog extends DialogFragment {
         mfragmentListener=mDetailsFragment;
         return mDialogInstance;
 
+    }  public static DeleteConfirmationDialog getDialogInstance(DialogType mType,String message,String content,
+                                                             MainActivity mActivity){
+        if(mDialogInstance==null){
+            mDialogInstance=new DeleteConfirmationDialog();
+        }
+        dialogMessage=message;
+        dialogContent=content;
+        mfragmentListener=mActivity;
+        return mDialogInstance;
+
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {

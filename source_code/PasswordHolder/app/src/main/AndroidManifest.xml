@@ -13,7 +13,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".SplashActivity">
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,17 +22,20 @@
         </activity>
         <activity
             android:name=".SignUpActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
 
         </activity>
 
         <activity
             android:name=".LoginActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
         </activity>
 
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
         </activity>
 
@@ -45,6 +49,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="9b7c8d9e192eed3c2fad5b4b3b333cd9f3d28213" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

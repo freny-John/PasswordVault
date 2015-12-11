@@ -25,7 +25,7 @@
     <dimen name="ind_width">16dp</dimen>
     <dimen name="button_padding">16dp</dimen>
     <dimen name="button_right_padding">6dp</dimen>
-    <dimen name="key_text_size">22sp</dimen>
+    <dimen name="key_text_size">18sp</dimen>
     <dimen name="copy_right_margin">20dp</dimen>
 
 </resources>

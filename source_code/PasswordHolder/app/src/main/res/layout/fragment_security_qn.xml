@@ -4,33 +4,11 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="passwordholder.bridge.com.passwordholder.SecurityQnFragment">
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <!-- <android.support.v7.widget.Toolbar
-             android:id="@+id/my_toolbar"
-             android:layout_height="wrap_content"
-             android:layout_width="match_parent"
-             android:minHeight="?attr/actionBarSize"
-             android:elevation="4dp"
-             android:background="@color/primary"
-             app:theme="@style/AppTheme" >
-             <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
-                 android:layout_width="fill_parent"
-                 android:layout_height="wrap_content"
-                 android:text="@string/accounts"
-                 android:gravity="center"
-                 android:textColor="@android:color/white"
-                 android:layout_gravity="center"
-                 android:id="@+id/toolbar_title" />
 
-         </android.support.v7.widget.Toolbar>-->
-        <!--
-            android:layout_below="@+id/my_toolbar"
-    -->
-        <!-- <ScrollView
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">-->
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -72,25 +50,7 @@
                     android:orientation="vertical"
                     android:layout_marginTop="10dp"
                     android:layout_centerHorizontal="true">
-<!--
-                    <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:id="@+id/autocomplete_qn"
-                        android:layout_width="fill_parent"
-                        android:padding="6dp"
-                        android:layout_height="wrap_content"
-                        />
 
-                    <EditText
-                        android:id="@+id/answer"
-                        android:layout_marginTop="8dp"
-                        android:layout_width="fill_parent"
-                        android:padding="6dp"
-                        android:layout_marginBottom="70dp"
-
-                        android:layout_height="wrap_content"
-                        android:hint="@string/answer"
-                        android:imeOptions="actionDone"
-                        />-->
                     <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
                         android:id="@+id/autocomplete_qn"
                         android:layout_width="fill_parent"
@@ -104,7 +64,7 @@
                         android:imeOptions="actionNext"
                         />
 
-                    <EditText
+                    <passwordholder.bridge.com.passwordholder.uicomponents.PMEditText
                         android:id="@+id/answer"
                         android:layout_marginTop="8dp"
                         android:layout_width="fill_parent"
@@ -118,35 +78,36 @@
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         />
+
+                    <passwordholder.bridge.com.passwordholder.uicomponents.PMButton
+                        android:id="@+id/btn_Go"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:text="Go"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:background="@drawable/pressed_key"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@android:color/white"/>
+
                 </LinearLayout>
 
-                <passwordholder.bridge.com.passwordholder.uicomponents.PMButton
-                    style="@style/buttonStyle"
-                    android:id="@+id/btn_Go"
-                    android:layout_marginTop="8dp"
+
+                <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+                    android:id="@+id/txt_Ver"
                     android:layout_width="wrap_content"
-                    android:text="@string/go"
-                    android:background="@color/primary"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="20dp"
                     android:layout_height="wrap_content"
+                    android:text="@string/ver_txt"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="@color/secondary"
 
                     />
-
             </RelativeLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ver_txt"
-                android:id="@+id/txt_Ver"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                />
-
         </RelativeLayout>
     </ScrollView>
-
-
 </RelativeLayout>

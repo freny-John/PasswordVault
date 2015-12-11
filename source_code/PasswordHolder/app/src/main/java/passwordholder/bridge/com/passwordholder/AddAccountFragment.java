@@ -6,14 +6,22 @@ import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.squareup.otto.Bus;
+
+import passwordholder.bridge.com.passwordholder.Utils.BusProvider;
 import passwordholder.bridge.com.passwordholder.Utils.Crypto;
+import passwordholder.bridge.com.passwordholder.model.Message;
 import passwordholder.bridge.com.passwordholder.provider.ProviderMetadata;
 
 
@@ -37,9 +45,9 @@ public class AddAccountFragment extends Fragment {
 
         View v=inflater.inflate(R.layout.fragment_add_account, container, false);
         initUi(v);
-        btn_add.setOnClickListener(view ->{
+        btn_add.setOnClickListener(view -> {
             getAccountDetails();
-        } );
+        });
         return v;
     }
 
@@ -63,6 +71,36 @@ public class AddAccountFragment extends Fragment {
             e.printStackTrace();
         }
 
+
+    accountPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_LEFT = 0;
+                final int DRAWABLE_TOP = 1;
+                final int DRAWABLE_RIGHT = 2;
+                final int DRAWABLE_BOTTOM = 3;
+
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= (accountPassword.getRight() - accountPassword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                        // your action here
+                        if(accountPassword.getTag().equals("0")){
+                            accountPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            accountPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_not_hidden, 0);
+                            accountPassword.setTag("1");
+                        }
+                        else
+                        {
+                            accountPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            accountPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_hidden, 0);
+                            accountPassword.setTag("0");
+                        }
+
+                        return false;
+                    }
+                }
+                return false;
+            }
+        });
     }
 
     private void getAccountDetails() {
