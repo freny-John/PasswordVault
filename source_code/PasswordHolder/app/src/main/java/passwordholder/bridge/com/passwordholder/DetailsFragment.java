@@ -229,6 +229,4 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
     }
 
 
-
-
 }
