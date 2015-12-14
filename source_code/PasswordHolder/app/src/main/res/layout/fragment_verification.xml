@@ -14,14 +14,14 @@
         android:gravity="center"
         android:padding="16dp"
         >
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordHolder.uicomponents.PMTextView
             android:id="@+id/ver_text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/primary"
             android:text="@string/enter_your_verification_code"/>
 
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMEditText
+        <com.bridge.passwordHolder.uicomponents.PMEditText
             android:id="@+id/ver_code"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:layout_below="@+id/ver_text"
           />
 
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMButton
+        <com.bridge.passwordHolder.uicomponents.PMButton
 
             android:id="@+id/btn_verify"
             android:layout_width="50dp"

@@ -15,7 +15,7 @@
         android:background="@color/primary"
         app:theme="@style/AppTheme"
         >
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings"
@@ -37,7 +37,7 @@
             android:src="@drawable/topimage"
             android:scaleType="fitXY"
             />
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="fill_parent"
             android:layout_height="80dp"
             android:background="@color/card_shadow"
@@ -54,7 +54,7 @@
             android:background="@color/black_de"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"></View>
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="fill_parent"
             android:layout_height="80dp"
             android:background="@color/card_shadow"

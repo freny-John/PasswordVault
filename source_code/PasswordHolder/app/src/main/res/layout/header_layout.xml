@@ -8,13 +8,15 @@
     android:layout_height="wrap_content"
     tools:showIn="@layout/activity_sign_up">
 
-    <passwordholder.bridge.com.passwordHolder.Utils.TriangleBackgroundView
+    <com.bridge.passwordHolder.Utils.TriangleBackgroundView
         android:layout_marginTop="110dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         custom:tr_color_red="true"
-        android:layout_alignParentTop="true"></passwordholder.bridge.com.passwordHolder.Utils.TriangleBackgroundView>
+        android:layout_alignParentTop="true">
+
+    </com.bridge.passwordHolder.Utils.TriangleBackgroundView>
 
     <RelativeLayout
         android:layout_gravity="center_horizontal"
@@ -39,7 +41,7 @@
         android:layout_marginTop="110dp"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal">
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordHolder.uicomponents.PMTextView
             android:id="@+id/head_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +54,7 @@
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/white"
             android:layout_above="@+id/text_head_sub" />
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordHolder.uicomponents.PMTextView
             android:id="@+id/text_head_sub"
             android:layout_width="130dp"
             android:layout_height="wrap_content"

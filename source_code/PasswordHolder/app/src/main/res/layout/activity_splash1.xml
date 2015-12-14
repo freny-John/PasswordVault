@@ -3,18 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@color/primary"
+
+    android:background="@color/secondary"
     android:id="@+id/splash_container"
-    tools:context="passwordholder.bridge.com.passwordHolder.SplashActivity">
+    tools:context="com.bridge.passwordHolder.SplashActivity">
     <ImageView
         android:id="@+id/image_logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/logo"
+
         android:transitionName="@string/activity_image_trans"
         android:layout_centerInParent="true"/>
     <com.bridge.passwordHolder.uicomponents.PMTextView
@@ -23,9 +21,16 @@
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/copy_right_margin"/>
-    <com.bridge.passwordHolder.Utils.TriangleBackgroundView
+    <com.bridge.passwordHolder.Utils.RightTriangleBackgroundView
         android:layout_gravity="center_horizontal|top"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
+
         custom:tr_color_red="false" />
+    <com.bridge.passwordHolder.Utils.RightTriangleBackgroundView
+        android:layout_gravity="center_horizontal|top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rotation="180"
+        custom:tr_color_red="true" />
 </RelativeLayout>

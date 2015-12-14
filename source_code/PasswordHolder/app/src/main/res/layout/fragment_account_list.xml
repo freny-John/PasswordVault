@@ -29,7 +29,7 @@
         app:theme="@style/AppBaseTheme"
         android:fitsSystemWindows="true"
         >
-        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/accounts"
