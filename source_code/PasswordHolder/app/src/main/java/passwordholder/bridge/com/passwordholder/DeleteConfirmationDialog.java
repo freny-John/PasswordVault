@@ -1,7 +1,6 @@
 package passwordholder.bridge.com.passwordholder;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -13,8 +12,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.squareup.otto.Bus;
-
 
 public class DeleteConfirmationDialog extends DialogFragment {
 
@@ -23,7 +20,7 @@ public class DeleteConfirmationDialog extends DialogFragment {
         DIALOG_APP_EXIT
     }
     private OnDialogInteractionListener mListener;
-   static  private OnDialogInteractionListener mfragmentListener;
+   static  private OnDialogInteractionListener mFragmentListener;
     static  DeleteConfirmationDialog mDialogInstance;
     static String dialogMessage,dialogContent;
     TextView title,content;
@@ -60,7 +57,7 @@ public class DeleteConfirmationDialog extends DialogFragment {
         }
         dialogMessage=message;
         dialogContent=content;
-        mfragmentListener=mDetailsFragment;
+        mFragmentListener =mDetailsFragment;
         return mDialogInstance;
 
     }  public static DeleteConfirmationDialog getDialogInstance(DialogType mType,String message,String content,
@@ -70,7 +67,7 @@ public class DeleteConfirmationDialog extends DialogFragment {
         }
         dialogMessage=message;
         dialogContent=content;
-        mfragmentListener=mActivity;
+        mFragmentListener =mActivity;
         return mDialogInstance;
 
     }
@@ -105,7 +102,7 @@ public class DeleteConfirmationDialog extends DialogFragment {
     private void setListeners() {
         positive.setOnClickListener(view -> {
             if(mListener!=null){
-                mfragmentListener.onDialogDone();
+                mFragmentListener.onDialogDone();
                 getDialog().dismiss();
             }
         });

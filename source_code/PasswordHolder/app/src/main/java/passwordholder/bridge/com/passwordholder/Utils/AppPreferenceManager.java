@@ -13,6 +13,8 @@ public class AppPreferenceManager
 
     public static final String FIRST_TIME_USER="FirstTimeUser";
     public static final String USER_EMAIL="UserEmail";
+    public static final String USER_NAME="UserName";
+    public static final String USER_ID="UserId";
     public static final String USER_PASSWORD="Password";
     public static final String SECURITY_QUESTION="SecurityQuestion";
     public static final String SECURITY_ANSWER="SecurityAnswer";

@@ -14,12 +14,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 import passwordholder.bridge.com.passwordholder.Utils.AppPreferenceManager;
 import passwordholder.bridge.com.passwordholder.Utils.PLog;
 import passwordholder.bridge.com.passwordholder.Utils.ValidationUtils;
 import passwordholder.bridge.com.passwordholder.apimanager.PasswordApiclient;
+import passwordholder.bridge.com.passwordholder.apimanager.SignupApiManager;
 import passwordholder.bridge.com.passwordholder.apimanager.onHttpListener;
 import rx.Observable;
 import rx.Observer;
@@ -59,6 +63,7 @@ public class SignUpFragment extends Fragment implements onHttpListener {
 
         SignUp.setOnClickListener(view -> {
             if (doValidation()) {
+                //TODO comment
                 gotoPinFragment();
             }
             // rxValidate();
@@ -79,20 +84,22 @@ public class SignUpFragment extends Fragment implements onHttpListener {
         transaction.commit();
     }
 
-
+    String u_username,u_lastName,u_email;
     private boolean doValidation() {
 
-        String username,lastName,email;
 
-        username= firstName.getText().toString().trim();
-        lastName= this.lastName.getText().toString().trim();
-        email= Email.getText().toString().trim();
 
-        if(!(TextUtils.isEmpty(username))){
-            if(!TextUtils.isEmpty(email)){
+        u_username= firstName.getText().toString().trim();
+        u_lastName= this.lastName.getText().toString().trim();
+        u_email= Email.getText().toString().trim();
+
+        if(!(TextUtils.isEmpty(u_username))){
+            if(!TextUtils.isEmpty(u_email)){
                 if(ValidationUtils.validateEmail(Email))
                 {
-                    storeUserCredentials(username, lastName);
+                    //TODO umcomment
+                    //new SignupApiManager(myActivity,username,lastName,u_email,SignUpFragment.this).getResponse();
+                    storeUserCredentials(u_username, u_lastName, u_email);
                     return  true;
 
                 }
@@ -113,16 +120,17 @@ public class SignUpFragment extends Fragment implements onHttpListener {
         return false;
     }
 
-    private void storeUserCredentials(String username, String password) {
+    private void storeUserCredentials(String username, String password,String email) {
 
-        AppPreferenceManager.setUserEmail(myActivity, username);
+        AppPreferenceManager.setUserEmail(myActivity, email);
+        AppPreferenceManager.setValue(myActivity, AppPreferenceManager.USER_NAME, username);
         AppPreferenceManager.setUserPassword(myActivity, password);
-         AppPreferenceManager.setFirstTimeUser(myActivity, false);
+        AppPreferenceManager.setFirstTimeUser(myActivity, false);
     }
 
     private void showSnackBarOnError(View v ,String message){
 
-        Snackbar.make(v.getRootView(),message,Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(myActivity.findViewById(R.id.snackbarlocation),message,Snackbar.LENGTH_SHORT).show();
     }
 
     private void initUi(View v) {
@@ -186,8 +194,23 @@ public class SignUpFragment extends Fragment implements onHttpListener {
 
     @Override
     public void onSuccess(String response) {
-        PLog.e("Signup fragment on response "+response);
+        PLog.e("Signup api on response: " + response);
+        if(!TextUtils.isEmpty(response)) {
+            try {
+                JSONObject jb=new JSONObject(response);
+                String status=jb.optString("status");
+                if(status.equals("success"))
+                {
+                    String id=jb.optString("user_id");
+                    AppPreferenceManager.setValue(myActivity,AppPreferenceManager.USER_ID,id);
+                    storeUserCredentials(u_username, u_lastName, u_email);
+                    gotoPinFragment();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
+        }
     }
 
 

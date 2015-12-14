@@ -181,6 +181,9 @@ public class AccountListFragment extends Fragment  implements LoaderManager.Load
 
         Fragment newFragment = new AddAccountFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        Bundle b=new Bundle();
+        b.putString("from","add");
+        newFragment.setArguments(b);
         //  transaction.setCustomAnimations(R.anim.slide_right, R.anim.slide_left);
         //transaction.setCustomAnimations(R.anim.bottom_up, R.anim.splashfadeout);
         transaction.replace(R.id.fragment_container, newFragment);

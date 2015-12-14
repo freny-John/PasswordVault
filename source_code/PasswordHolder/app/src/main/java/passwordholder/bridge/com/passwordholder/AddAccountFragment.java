@@ -2,6 +2,7 @@ package passwordholder.bridge.com.passwordholder;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -25,6 +26,8 @@ import java.util.Locale;
 
 import passwordholder.bridge.com.passwordholder.Utils.BusProvider;
 import passwordholder.bridge.com.passwordholder.Utils.Crypto;
+import passwordholder.bridge.com.passwordholder.Utils.PLog;
+import passwordholder.bridge.com.passwordholder.model.AccountListItem;
 import passwordholder.bridge.com.passwordholder.model.Message;
 import passwordholder.bridge.com.passwordholder.provider.ProviderMetadata;
 
@@ -37,6 +40,8 @@ public class AddAccountFragment extends Fragment {
     //TextInputLayout accountLayoutName,accountLayoutUsername,accountLayoutPassword,accountLayoutDetails;
     MainActivity myActivity;
     Toolbar mToolbar;
+    String from;
+    AccountListItem mAccountListItem;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +53,16 @@ public class AddAccountFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v=inflater.inflate(R.layout.fragment_add_account, container, false);
+
+        Bundle b=getArguments();
+        if(b!=null) {
+            from = b.getString("from");
+            PLog.e("add fragment is calling from "+from);
+            if (from.equals("edit")) {
+                mAccountListItem = (AccountListItem) b.getSerializable("accountItem");
+                PLog.e("add fragment is calling mAccountListItem "+mAccountListItem.toString());
+            }
+        }
         initUi(v);
         btn_add.setOnClickListener(view -> {
             getAccountDetails();
@@ -63,6 +78,7 @@ public class AddAccountFragment extends Fragment {
         accountPassword=(EditText)v.findViewById(R.id.account_password);
         accountDetails=(EditText)v.findViewById(R.id.account_details);
 
+        initData();
        /* accountLayoutName=(TextInputLayout) v.findViewById(R.id.account_layout_name);
         accountLayoutUsername=(TextInputLayout)v.findViewById(R.id.account_layout_username);
         accountLayoutPassword=(TextInputLayout)v.findViewById(R.id.account_layout_password);*/
@@ -76,7 +92,7 @@ public class AddAccountFragment extends Fragment {
         }
 
 
-    accountPassword.setOnTouchListener(new View.OnTouchListener() {
+        accountPassword.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 final int DRAWABLE_LEFT = 0;
@@ -107,6 +123,20 @@ public class AddAccountFragment extends Fragment {
         });
     }
 
+    private void initData() {
+        if(from.equals("edit")){
+            accountName.setText(mAccountListItem.getAccountName());
+            accountUsername.setText(mAccountListItem.getUsername());
+            accountPassword.setText(mAccountListItem.getPassword());
+            accountDetails.setText(mAccountListItem.getDetails());
+            btn_add.setText("Edit Account");
+        }
+        else
+        {
+            btn_add.setText("add Account");
+        }
+    }
+
     private void getAccountDetails() {
 
         String account_name,account_username,account_password;
@@ -117,9 +147,10 @@ public class AddAccountFragment extends Fragment {
         if(!TextUtils.isEmpty(account_name)){
             if(!TextUtils.isEmpty(account_username)){
                 if(!TextUtils.isEmpty(account_password)){
+
                     addAccountDetailsToDb(account_name,account_username,account_password);
                 }else{
-                   // accountLayoutPassword.setError(myActivity.getString(R.string.password_error));
+                    // accountLayoutPassword.setError(myActivity.getString(R.string.password_error));
 
                 }
             }else{
@@ -136,19 +167,31 @@ public class AddAccountFragment extends Fragment {
         ContentValues cv=new ContentValues();
         cv.put(ProviderMetadata.accountTableMetaData.accountName,account_name);
         cv.put(ProviderMetadata.accountTableMetaData.accountUsername,account_username);
-        cv.put(ProviderMetadata.accountTableMetaData.accountPassword, Crypto.setPassword(account_password,myActivity));
+        cv.put(ProviderMetadata.accountTableMetaData.accountPassword, Crypto.setPassword(account_password, myActivity));
         cv.put(ProviderMetadata.accountTableMetaData.accountNotes,accountDetails.getText().toString().trim());
-        cv.put(ProviderMetadata.accountTableMetaData.timeStamp,getDateTime());
-        myActivity.getContentResolver().insert(ProviderMetadata.accountTableMetaData.CONTENT_URI,cv);
+        cv.put(ProviderMetadata.accountTableMetaData.timeStamp, getDateTime());
+        if(from.equals("add")) {
+            myActivity.getContentResolver().insert(ProviderMetadata.accountTableMetaData.CONTENT_URI, cv);
+        }
+        else
+        {
+            myActivity.getContentResolver().update(ProviderMetadata.accountTableMetaData.CONTENT_URI, cv, ProviderMetadata.accountTableMetaData._ID + " = " + mAccountListItem.getAccountId(), null);
+            mAccountListItem.setAccountName(account_name);
+            mAccountListItem.setDate(getDateTime());
+            mAccountListItem.setUsername(account_username);
+            mAccountListItem.setPassword(account_password);
+            mAccountListItem.setDetails(accountDetails.getText().toString().trim());
+            DetailsFragment.mOnEditSuccessfulListener.onEditSuccess(mAccountListItem);
+        }
         if (mListener != null) {
             mListener.onFragmentInteraction(myActivity.getString(R.string.success_message));
             getFragmentManager().popBackStack();    //close fragment after adding account
         }
     }
+
     private String getDateTime() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "dd-MM-yyyy HH:mm:ss", Locale.getDefault());/*SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyy-MM-dd HH:mm:ss", Locale.getDefault());*/
+                "dd-MM-yyyy HH:mm:ss", Locale.getDefault());
         Date date = new Date();
         return dateFormat.format(date);
     }
@@ -157,9 +200,9 @@ public class AddAccountFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-        if(myActivity==null){
-            myActivity =(MainActivity)activity;
-        }
+            if(myActivity==null){
+                myActivity =(MainActivity)activity;
+            }
             mListener = (OnFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
@@ -175,7 +218,9 @@ public class AddAccountFragment extends Fragment {
 
 
     public interface OnFragmentInteractionListener {
-         void onFragmentInteraction(String msg);
+        void onFragmentInteraction(String msg);
     }
-
+    public interface OnEditSuccessfulListener {
+        void onEditSuccess(AccountListItem mAccountListItem);
+    }
 }

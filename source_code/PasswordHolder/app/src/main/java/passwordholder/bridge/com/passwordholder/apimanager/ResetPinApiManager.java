@@ -40,6 +40,7 @@ public class ResetPinApiManager extends AsyncTask<Void, Void, Boolean>{
             try {
                 response= PasswordApiclient.postUrl(url, CommonUtils.getJSON(resetApi));
             } catch (IOException e) {
+                monHttpListener.onError(c.getString(R.string.something_went_wrong));
                 response="";
                 e.printStackTrace();
             }

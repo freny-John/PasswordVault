@@ -45,13 +45,14 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.ViewHold
     private int lastPosition = -1;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView_head;
+        private final TextView textView_head,accountDetailsText;
         private final LinearLayout container;
         private final RoundedLetterView mRoundedLetterView;
 
         public ViewHolder(View v) {
             super(v);
             textView_head = (TextView) v.findViewById(R.id.account_name_txt);
+            accountDetailsText = (TextView) v.findViewById(R.id.account_details_txt);
             mRoundedLetterView = (RoundedLetterView) v.findViewById(R.id.rlv_name_view);
             container=(LinearLayout) v.findViewById(R.id.container);
 
@@ -86,6 +87,7 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.ViewHold
         PLog.d(TAG + ":Element " + position + " set.");
         AccountListItem currentListItem=mAccountList.get(position);
         viewHolder.getTextView_head().setText(currentListItem.getAccountName());
+        viewHolder.accountDetailsText.setText("Date Modified:"+currentListItem.getDate());
 //        viewHolder.mRoundedLetterView.setBackgroundColor(mContext.getColor(R.color.primary));
         viewHolder.mRoundedLetterView.setTitleText(String.valueOf(currentListItem.getAccountName().charAt(0)).toUpperCase());
 

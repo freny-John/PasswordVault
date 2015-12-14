@@ -1,35 +1,35 @@
 package passwordholder.bridge.com.passwordholder;
 
 import android.app.Activity;
+import android.support.v4.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import com.squareup.otto.Bus;
 
 import passwordholder.bridge.com.passwordholder.Utils.Crypto;
-import passwordholder.bridge.com.passwordholder.Utils.PLog;
 import passwordholder.bridge.com.passwordholder.model.AccountListItem;
-import passwordholder.bridge.com.passwordholder.model.Reload;
 import passwordholder.bridge.com.passwordholder.provider.ProviderMetadata;
 import passwordholder.bridge.com.passwordholder.uicomponents.RoundedLetterView;
 
 
-public class DetailsFragment extends Fragment implements View.OnClickListener,DeleteConfirmationDialog.OnDialogInteractionListener{
+public class DetailsFragment extends Fragment implements View.OnClickListener,DeleteConfirmationDialog.OnDialogInteractionListener,AddAccountFragment.OnEditSuccessfulListener {
 
     private OnDetailFragmentInteractionListener mListener;
     AccountListItem currentAccountListItem;
@@ -40,6 +40,8 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
     ImageView deleteBtn,editBtn,back;
     Bus bus;
     RoundedLetterView RoundedLetterView;
+    ViewSwitcher eyeViewSwitcher;
+static AddAccountFragment.OnEditSuccessfulListener mOnEditSuccessfulListener;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
         }
         bus=new Bus();
         bus.register(DetailsFragment.this);
+        mOnEditSuccessfulListener=DetailsFragment.this;
     }
 
     @Override
@@ -66,8 +69,10 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
         accountPassword=(TextView)v.findViewById(R.id.account_password);
         accountDetails=(TextView)v.findViewById(R.id.account_details);
         date=(TextView)v.findViewById(R.id.date);
-        RoundedLetterView=(RoundedLetterView) v.findViewById(R.id.detailLetterView);
+        accountPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
+        RoundedLetterView=(RoundedLetterView) v.findViewById(R.id.detailLetterView);
+        eyeViewSwitcher =(ViewSwitcher) v.findViewById(R.id.eye_view_switcher);
         deleteBtn= (ImageView) v.findViewById(R.id.btn_delete);
         back= (ImageView) v.findViewById(R.id.back);
         deleteBtn.setOnClickListener(this);
@@ -78,14 +83,29 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
         myActivity.setSupportActionBar(mToolbar);
         myActivity.getSupportActionBar().setTitle("");
 
-        setDetails();
+        setDetails(currentAccountListItem);
         back.setOnClickListener(view -> {
             myActivity.onBackPressed();
         });
 
+        eyeViewSwitcher.setOnClickListener(view -> {
+            if(eyeViewSwitcher.getTag().equals("0"))
+            {
+                accountPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                eyeViewSwitcher.setTag("1");
+            }
+            else
+            {
+                accountPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                eyeViewSwitcher.setTag("0");
+
+            }
+            eyeViewSwitcher.showNext();
+        });
+
     }
 
-    private void setDetails() {
+    private void setDetails(AccountListItem currentAccountListItem) {
         if(currentAccountListItem!=null){
             accountName.setText(currentAccountListItem.getAccountName());
             accountUsername.setText(currentAccountListItem.getUsername());
@@ -122,12 +142,24 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
                 break;
             case R.id.btn_edit:
                 if(editBtn.getTag().equals(myActivity.getString(R.string.btn_edit))) {
-                    editBtn.setImageDrawable(getResources().getDrawable(R.drawable.tick));
+                   /* editBtn.setImageDrawable(getResources().getDrawable(R.drawable.tick));
                     editBtn.setTag(myActivity.getString(R.string.btn_done));
                     accountName.setEnabled(true);
                     accountUsername.setEnabled(true);
                     accountPassword.setEnabled(true);
-                    accountDetails.setEnabled(true);
+                    accountDetails.setEnabled(true);*/
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                   // FragmentTransaction transaction=getChildFragmentManager().beginTransaction();
+                    Fragment editFragment=new AddAccountFragment();
+                    Bundle b=new Bundle();
+                    b.putString("from","edit");
+                    b.putSerializable("accountItem", currentAccountListItem);
+                    editFragment.setArguments(b);
+                    transaction.replace(R.id.fragment_container,editFragment,"edit").addToBackStack("details");
+                    transaction.commit();
+
+
                 }
                 else
                 {
@@ -141,7 +173,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
 
     }
 
-    private void changeButtonbg(Drawable drawable, String string, boolean enabled) {
+    private void changeButtonBg(Drawable drawable, String string, boolean enabled) {
         editBtn.setImageDrawable(drawable);
         editBtn.setTag(string);
         accountName.setEnabled(enabled);
@@ -183,11 +215,8 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
         cv.put(ProviderMetadata.accountTableMetaData.accountNotes, accountDetails.getText().toString().trim());
         myActivity.getContentResolver().delete(ProviderMetadata.accountTableMetaData.CONTENT_URI, ProviderMetadata.accountTableMetaData._ID + "=" + currentAccountListItem.getAccountId(), null);
         myActivity.getContentResolver().insert(ProviderMetadata.accountTableMetaData.CONTENT_URI, cv);
-        Snackbar snackbar = Snackbar.make(editBtn.getRootView(), "Changes Added Successfully", Snackbar.LENGTH_SHORT);
-        View snackBarView = snackbar.getView();
-        snackBarView.setBackgroundColor(Color.GREEN);
-        snackbar.show();
-        changeButtonbg(getResources().getDrawable(R.drawable.edit), myActivity.getString(R.string.btn_edit), false);
+        myActivity.showSnackBar(myActivity.getString(R.string.changes_added_successfully),null,null,Color.GREEN);
+        changeButtonBg(getResources().getDrawable(R.drawable.edit), myActivity.getString(R.string.btn_edit), false);
     }
 
     DialogFragment fragment;
@@ -217,9 +246,13 @@ public class DetailsFragment extends Fragment implements View.OnClickListener,De
 
     @Override
     public void onDialogDone() {
-        PLog.e("onDone");
         deleteItem(currentAccountListItem.getAccountId());
         myActivity.onBackPressed();
+    }
+
+    @Override
+    public void onEditSuccess(AccountListItem mAccountListItem) {
+        setDetails(mAccountListItem);
     }
 
     public interface OnDetailFragmentInteractionListener {
