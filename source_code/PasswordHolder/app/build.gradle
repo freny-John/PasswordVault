@@ -25,7 +25,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     defaultConfig {
-        applicationId "passwordholder.bridge.com.passwordholder"
+        applicationId "com.bridge.passwordHolder"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1

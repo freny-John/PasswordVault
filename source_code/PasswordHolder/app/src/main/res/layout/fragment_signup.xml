@@ -2,7 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="passwordholder.bridge.com.passwordholder.SignUpFragment">
+    tools:context="passwordholder.bridge.com.passwordHolder.SignUpFragment">
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/snackbarlocation">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,7 +39,7 @@
                 />
 
 
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMEditText
+            <passwordholder.bridge.com.passwordHolder.uicomponents.PMEditText
                 android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +50,7 @@
                 android:hint="@string/lastname" />
 
 
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMEditText
+            <passwordholder.bridge.com.passwordHolder.uicomponents.PMEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,7 +61,7 @@
                 android:hint="@string/email" />
 
 
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMButton
+            <passwordholder.bridge.com.passwordHolder.uicomponents.PMButton
 
                 android:id="@+id/btn_signup"
                 android:layout_width="50dp"
@@ -69,4 +75,5 @@
 
         </LinearLayout>
     </ScrollView>
+    </android.support.design.widget.CoordinatorLayout>
 </FrameLayout>

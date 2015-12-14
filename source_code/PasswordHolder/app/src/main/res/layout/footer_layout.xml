@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/primary" />
 
-    <passwordholder.bridge.com.passwordholder.Utils.TriangleBackgroundView
+    <passwordholder.bridge.com.passwordHolder.Utils.TriangleBackgroundView
         android:layout_gravity="center_horizontal|top"
         android:layout_width="match_parent"
         android:layout_height="100dp"

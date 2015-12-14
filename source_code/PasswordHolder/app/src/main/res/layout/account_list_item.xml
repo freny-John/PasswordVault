@@ -22,7 +22,7 @@
             android:paddingLeft="16dp"
             android:background="@color/bg"
             >
-            <passwordholder.bridge.com.passwordholder.uicomponents.RoundedLetterView
+            <passwordholder.bridge.com.passwordHolder.uicomponents.RoundedLetterView
                 android:layout_gravity="center_vertical"
                 android:id="@+id/rlv_name_view"
                 android:layout_width="36dp"
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_centerVertical="true">
-                <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+                <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
                     android:id="@+id/account_name_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
                     android:textSize="@dimen/list_item_text_head_size"
                     android:textColor="@color/text_black"
                     />
-                <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+                <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
                     android:id="@+id/account_details_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

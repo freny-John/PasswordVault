@@ -6,6 +6,12 @@
     android:background="@color/bg"
     tools:context=".MainActivity">
 
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/snackbarlocation">
 
     <FrameLayout
         android:layout_below="@+id/my_toolbar"
@@ -13,5 +19,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-
+    </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

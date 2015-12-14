@@ -1,12 +1,9 @@
 <resources>
-    <string name="app_name">PasswordHolder</string>
 
+    <string name="app_name">PasswordHolder</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="search">Search</string>
-
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="accout_type">Account type</string>
     <string name="account_username">Username/Email</string>
     <string name="firstname">First Name</string>
@@ -58,7 +55,7 @@
     <string name="clear_all">clear all</string>
     <string name="error_security_answer">Do you forgot your security answer?</string>
     <string name="ver_txt">get verification code</string>
-    <string name="network_problem">Please check your connection</string>
+    <string name="network_problem">Please check your network connection</string>
     <string name="security_qn">Security Question</string>
     <string name="signup_sub">Set your security question and answer</string>
     <string name="login_subtitle">To access your account</string>
@@ -71,6 +68,9 @@
     <string name="reset_pin">Reset Pin</string>
     <string name="about_app">About App</string>
     <string name="last_modified">Last Modified:</string>
+    <string name="changes_added_successfully">Changes Added Successfully</string>
+    <string name="something_went_wrong">Something went wrong. Please try again.</string>
+    <string name="wrong_verfication_code">Wrong verification code</string>
 
     <string-array name="qn_array">
         <item>What is the name of your favorite childhood friend?</item>

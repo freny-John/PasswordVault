@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="passwordholder.bridge.com.passwordholder.SecurityQnFragment">
+    tools:context="passwordholder.bridge.com.passwordHolder.SecurityQnFragment"
+    android:background="@color/bg">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -17,7 +18,7 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:paddingBottom="@dimen/activity_vertical_margin">
 
-            <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+            <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
                 android:id="@+id/title"
                 android:layout_marginTop="15dp"
                 android:paddingBottom="15dp"
@@ -62,7 +63,7 @@
                             android:focusableInTouchMode="true"
                             android:imeOptions="actionNext"
                             />
-                        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+                        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
                             android:id="@+id/qn"
                             android:layout_marginTop="8dp"
                             android:layout_width="fill_parent"
@@ -73,7 +74,7 @@
                             android:visibility="gone"
                             />
 
-                    <passwordholder.bridge.com.passwordholder.uicomponents.PMEditText
+                    <passwordholder.bridge.com.passwordHolder.uicomponents.PMEditText
                         android:id="@+id/answer"
                         android:layout_marginTop="8dp"
                         android:layout_width="fill_parent"
@@ -88,7 +89,7 @@
                         android:focusableInTouchMode="true"
                         />
 
-                    <passwordholder.bridge.com.passwordholder.uicomponents.PMButton
+                    <passwordholder.bridge.com.passwordHolder.uicomponents.PMButton
                         android:id="@+id/btn_Go"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
@@ -105,7 +106,7 @@
                 </LinearLayout>
 
 
-                <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+                <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
                     android:id="@+id/txt_Ver"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="passwordholder.bridge.com.passwordholder.AddAccountFragment">
+    tools:context="passwordholder.bridge.com.passwordHolder.AddAccountFragment">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/back_arrow"
             />
-        <passwordholder.bridge.com.passwordholder.uicomponents.PMTextView
+        <passwordholder.bridge.com.passwordHolder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/account_details"
@@ -56,7 +56,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="56dp">
-                <passwordholder.bridge.com.passwordholder.uicomponents.RoundedLetterView
+                <passwordholder.bridge.com.passwordHolder.uicomponents.RoundedLetterView
                     android:layout_gravity="center_vertical"
                     android:id="@+id/rlv_name_view"
                     android:layout_width="fill_parent"
@@ -86,7 +86,7 @@
                 android:layout_height="76dp"
                 android:gravity="center">
 
-                <passwordholder.bridge.com.passwordholder.uicomponents.RoundedLetterView
+                <passwordholder.bridge.com.passwordHolder.uicomponents.RoundedLetterView
                     android:id="@+id/detailLetterView"
                     android:layout_width="76dp"
                     android:layout_height="76dp"
@@ -107,7 +107,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="56dp">
-                <passwordholder.bridge.com.passwordholder.uicomponents.RoundedLetterView
+                <passwordholder.bridge.com.passwordHolder.uicomponents.RoundedLetterView
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:id="@+id/rlv_name_view1"
                     android:layout_width="56dp"
