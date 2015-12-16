@@ -13,8 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        custom:tr_color_red="true"
-        android:layout_alignParentTop="true">
+        custom:tr_color_red="true">
 
     </com.bridge.passwordHolder.Utils.TriangleBackgroundView>
 
@@ -22,7 +21,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_width="fill_parent"
         android:layout_height="130dp"
-        android:layout_alignParentTop="true"
         android:background="@color/primary">
 
         <ImageView
@@ -31,7 +29,8 @@
             android:layout_marginTop="40dp"
             android:layout_height="75dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            android:contentDescription="@string/logo"/>
 
 
     </RelativeLayout>
@@ -45,7 +44,7 @@
             android:id="@+id/head_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome!"
+            android:text="@string/welcome"
             android:singleLine="true"
             android:textSize="20sp"
             android:gravity="center_horizontal"
@@ -58,8 +57,8 @@
             android:id="@+id/text_head_sub"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:text="Lorem ipsum djj j jnhfuhuf Signup Here"
-            android:textSize="15sp"
+            android:text="@string/sign_up_message"
+            android:textSize="13sp"
             android:gravity="center_horizontal"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/white"

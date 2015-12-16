@@ -43,6 +43,11 @@
         <item name="android:background">@drawable/indicate_key_selecter</item>
         <item name="android:layout_margin">3dp</item>
     </style>
+    <style name="edit_text_style"  parent="android:Widget.EditText">
+        <item name="android:background">@color/accent</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:padding">6dp</item>
+    </style>
 
     <style name="buttonStyle"  parent="android:Widget.Button">
         <item name="android:background">@color/primary</item>

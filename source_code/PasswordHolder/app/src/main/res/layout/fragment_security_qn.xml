@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="passwordholder.bridge.com.passwordHolder.SecurityQnFragment"
+    tools:context="com.bridge.passwordHolder.SecurityQnFragment"
     android:background="@color/bg">
 
     <ScrollView
@@ -69,7 +69,7 @@
                             android:layout_width="fill_parent"
                             android:padding="6dp"
                             android:layout_height="wrap_content"
-                            android:imeOptions="actionGo"
+                            android:imeOptions="actionNext"
                             android:textSize="16sp"
                             android:visibility="gone"
                             />
@@ -83,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/answer"
                         android:inputType="text"
-                        android:imeOptions="actionGo"
+                        android:imeOptions="actionDone"
                         android:singleLine="true"
                         android:textSize="16sp"
                         android:focusableInTouchMode="true"
@@ -93,14 +93,11 @@
                         android:id="@+id/btn_Go"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:text="Go"
+                        android:text="@string/go"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center"
                         android:background="@drawable/pressed_key"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
                         android:layout_marginBottom="20dp"
-                        android:layout_centerHorizontal="true"
                         android:textColor="@android:color/white"/>
 
                 </LinearLayout>

@@ -1,14 +1,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="passwordholder.bridge.com.passwordHolder.LoginActivity"
+    tools:context="com.bridge.passwordHolder.LoginActivity"
     android:background="@color/bg">
+
     <android.support.design.widget.CoordinatorLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/snackbarlocation">
+        android:id="@+id/snack_bar_location">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
@@ -27,5 +31,7 @@
                 >
             </FrameLayout>
         </RelativeLayout>
+        </ScrollView>
     </android.support.design.widget.CoordinatorLayout>
+
 </RelativeLayout>

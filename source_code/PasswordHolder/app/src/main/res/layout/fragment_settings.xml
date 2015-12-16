@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg"
-    tools:context="passwordholder.bridge.com.passwordHolder.SettingsFragment">
+    tools:context="com.bridge.passwordHolder.SettingsFragment">
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_height="wrap_content"
@@ -15,6 +15,14 @@
         android:background="@color/primary"
         app:theme="@style/AppTheme"
         >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow"
+            android:padding="4dp"
+            android:contentDescription="@string/back"
+            />
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,12 +39,7 @@
         android:layout_height="fill_parent"
         android:orientation="vertical"
         android:layout_below="@+id/my_toolbar">
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/topimage"
-            android:scaleType="fitXY"
-            />
+
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="fill_parent"
             android:layout_height="80dp"

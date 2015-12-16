@@ -7,6 +7,7 @@
     <color name="pressed_text_color">#ffffff</color>
     <color name="bg">#ffffff</color>
     <color name="accent">#F7F7F7</color>
+    <color name="blur">#40FFFFFF</color>
 <!--
     <color name="primary_dark">#88f70f0e</color>
 -->

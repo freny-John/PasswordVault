@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg"
-    tools:context="passwordholder.bridge.com.passwordHolder.AddAccountFragment">
+    tools:context="com.bridge.passwordHolder.AddAccountFragment">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -12,9 +12,17 @@
         android:layout_width="match_parent"
         android:minHeight="?attr/actionBarSize"
         android:elevation="4dp"
-        android:gravity="center"
         android:background="@color/primary"
         app:theme="@style/AppTheme" >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow"
+            android:padding="4dp"
+            android:layout_gravity="left"
+            android:contentDescription="@string/back"
+            />
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,17 +30,26 @@
             android:textColor="@android:color/white"
             android:layout_gravity="center"
             android:id="@+id/toolbar_title" />
-
+        <ImageView
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tick"
+            android:padding="4dp"
+            android:layout_margin="4dp"
+            android:contentDescription="@string/add_account"
+            android:layout_gravity="right" />
     </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize"
+        android:paddingTop="16dp">
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -45,71 +62,79 @@
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/account_layout_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/text_layout_padding">
 
                 <com.bridge.passwordHolder.uicomponents.PMEditText
                     android:id="@+id/account_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:hint="@string/accout_type" />
+                    android:hint="@string/accout_type"
+                    style="@style/edit_text_style"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/account_layout_username"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/text_layout_padding">
 
                 <com.bridge.passwordHolder.uicomponents.PMEditText
                     android:id="@+id/account_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:hint="@string/account_username" />
+                    android:hint="@string/account_username"
+                    style="@style/edit_text_style"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/account_layout_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/text_layout_padding"
                 >
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-                    <com.bridge.passwordHolder.uicomponents.PMEditText
+
+                    <com.bridge.passwordHolder.uicomponents.ShowHidePasswordEditText
                         android:id="@+id/account_password"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:tag="0"
-                        android:drawableRight="@drawable/eye_hidden"
-                        android:hint="@string/password" />
+                        android:hint="@string/password"
+                        style="@style/edit_text_style"
+                        android:paddingRight="55dp"/>
 
-                </RelativeLayout>
+
+
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/account_layout_details"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/text_layout_padding">
 
                 <com.bridge.passwordHolder.uicomponents.PMEditText
                     android:id="@+id/account_details"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
                     android:inputType="textMultiLine"
                     android:hint="@string/notes"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    style="@style/edit_text_style"/>
             </android.support.design.widget.TextInputLayout>
 
-            <com.bridge.passwordHolder.uicomponents.PMButton
-                android:id="@+id/btn_add"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Add Account"
-                android:background="@color/primary"
-                android:layout_marginTop="40dp"
-                android:textColor="@android:color/white"/>
+            <!--  <com.bridge.passwordHolder.uicomponents.PMButton
+                  android:id="@+id/btn_add"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/add_account"
+                  android:background="@color/primary"
+                  android:layout_marginTop="40dp"
+                  android:textColor="@android:color/white"/>-->
         </LinearLayout>
     </ScrollView>
+
+
 </FrameLayout>

@@ -15,6 +15,7 @@ public class RightTriangleBackgroundView extends View {
     private Paint paint;
     private Paint bgPaint;
     private boolean mColor;
+    Path path;
     public RightTriangleBackgroundView(Context context) {
         super(context);
         init();
@@ -54,17 +55,12 @@ public class RightTriangleBackgroundView extends View {
         }
         else
         {
-            paint.setColor(getResources().getColor(R.color.edittext_bg));
+            paint.setColor(getResources().getColor(R.color.blur));
             bgPaint= new Paint();
             bgPaint.setStyle(Paint.Style.FILL);
             bgPaint.setColor(getResources().getColor(android.R.color.transparent));
         }
 
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     @Override
@@ -77,7 +73,7 @@ public class RightTriangleBackgroundView extends View {
         canvas.drawRect(0, 0, w, h, bgPaint);
         float radius = 50.0f;
 
-        Path path = new Path();
+        path= new Path();
         path.moveTo(0, h);
         path.lineTo(w, h);
         path.lineTo(0, 0);

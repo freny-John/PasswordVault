@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginRight="@dimen/marginright"
+
    >
 
     <com.andexert.library.RippleView
@@ -20,6 +20,7 @@
             android:gravity="left"
             android:id="@+id/container"
             android:paddingLeft="16dp"
+            android:paddingRight="4dp"
             android:background="@color/bg"
             >
             <com.bridge.passwordHolder.uicomponents.RoundedLetterView
@@ -50,7 +51,7 @@
                     android:id="@+id/account_name_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Account Name"
+                    android:text="@string/account_name"
                     android:textStyle="bold"
                     android:textSize="@dimen/list_item_text_head_size"
                     android:textColor="@color/text_black"
@@ -60,16 +61,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/list_item_text_sub_size"
-                    android:text="Date Modified"
-                    android:layout_below="@+id/account_name_txt"
-                    />
+                    android:text="@string/date_modified" />
                 </LinearLayout>
-                <View
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/dark_grey"></View>
+
             </RelativeLayout>
         </LinearLayout>
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/dark_grey"></View>
     </com.andexert.library.RippleView>
+
 </LinearLayout>

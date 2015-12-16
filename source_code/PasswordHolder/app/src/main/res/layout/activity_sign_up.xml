@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/edittext_bg"
-    tools:context="passwordholder.bridge.com.passwordHolder.SignUpActivity">
+    tools:context="com.bridge.passwordHolder.SignUpActivity">
   <!--  <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -20,7 +20,7 @@
         android:fitsSystemWindows="true"
         android:layout_below="@+id/header_pane"
         >
-    <!--    <fragment android:name="passwordholder.bridge.com.passwordholder.SignUpFragment"
+    <!--    <fragment android:name="com.bridge.passwordHolder.SignUpFragment"
             android:id="@+id/signup_fragment"
             android:layout_weight="1"
             android:layout_width="0dp"

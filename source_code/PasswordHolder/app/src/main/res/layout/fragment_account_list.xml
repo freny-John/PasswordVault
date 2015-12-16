@@ -55,21 +55,22 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+           <!-- android:layout_margin="10dp"-->
             <android.support.v7.widget.RecyclerView
-                android:layout_margin="10dp"
+
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/bg"/>
             <TextView
                 android:paddingTop="15dp"
-                android:paddingLeft="8dp"
+                android:paddingLeft="13dp"
                 android:paddingRight="8dp"
                 android:id="@+id/noItems"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="gone"
-                android:text="No Accounts Found"/>
+                android:text="@string/no_accounts_found"/>
         </RelativeLayout>
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/myFAB"

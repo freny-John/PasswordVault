@@ -11,7 +11,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/snackbarlocation">
+        android:id="@+id/snack_bar_location">
 
     <FrameLayout
         android:layout_below="@+id/my_toolbar"

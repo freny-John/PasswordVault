@@ -2,13 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="passwordholder.bridge.com.passwordHolder.SignUpFragment">
+    tools:context="com.bridge.passwordHolder.SignUpFragment">
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/snackbarlocation">
+        android:id="@+id/snack_bar_location">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,7 +24,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp">
 
-            <EditText
+            <com.bridge.passwordHolder.uicomponents.PMEditText
                 android:id="@+id/first_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,7 +45,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:inputType="text"
-                android:hint="@string/lastname" />
+                android:hint="@string/last_name" />
 
 
             <com.bridge.passwordHolder.uicomponents.PMEditText
@@ -66,7 +64,7 @@
                 android:id="@+id/btn_signup"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="Go"
+                android:text="@string/go"
                 android:layout_gravity="bottom|center_horizontal"
                 android:gravity="center"
                 android:background="@drawable/pressed_key"
