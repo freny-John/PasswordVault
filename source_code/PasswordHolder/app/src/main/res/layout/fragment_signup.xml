@@ -34,6 +34,7 @@
                 android:focusableInTouchMode="true"
                 android:gravity="center_horizontal"
                 android:hint="@string/firstname"
+                android:layout_marginTop="@dimen/edit_text_top_margin"
                 />
 
 
@@ -45,7 +46,8 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:inputType="text"
-                android:hint="@string/last_name" />
+                android:hint="@string/last_name"
+                android:layout_marginTop="@dimen/edit_text_top_margin"/>
 
 
             <com.bridge.passwordHolder.uicomponents.PMEditText
@@ -56,7 +58,8 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:inputType="textEmailAddress"
-                android:hint="@string/email" />
+                android:hint="@string/email"
+                android:layout_marginTop="@dimen/edit_text_top_margin"/>
 
 
             <com.bridge.passwordHolder.uicomponents.PMButton

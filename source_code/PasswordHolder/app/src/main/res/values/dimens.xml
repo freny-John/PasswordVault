@@ -28,5 +28,6 @@
     <dimen name="key_text_size">18sp</dimen>
     <dimen name="copy_right_margin">20dp</dimen>
     <dimen name="text_layout_padding">3dp</dimen>
+    <dimen name="edit_text_top_margin">16dp</dimen>
 
 </resources>

@@ -17,6 +17,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 import com.bridge.passwordHolder.R;
+import com.bridge.passwordHolder.Utils.PLog;
 
 
 /**
@@ -58,9 +59,7 @@ public class ShowHidePasswordEditText extends EditText {
 
 
     private void init(AttributeSet attrs) {
-        Typeface tf = Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLTPro-Lt.otf");
-        setTypeface(tf);
+
         if (attrs != null) {
             TypedArray attrsArray =
                     getContext().obtainStyledAttributes(attrs, R.styleable.ShowHidePasswordEditText);
@@ -96,6 +95,9 @@ public class ShowHidePasswordEditText extends EditText {
             public void afterTextChanged(Editable s) {
             }
         });
+        Typeface tf = Typeface.createFromAsset(getContext().getAssets(),
+                "fonts/HelveticaNeueLTPro-Lt.otf");
+        setTypeface(tf);
     }
 
     @Override

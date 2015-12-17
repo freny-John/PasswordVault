@@ -57,7 +57,7 @@
     <string name="wrong_pin_last_msg">You entered wrong pin.\n Answer to your own security question.</string>
     <string name="clear_all">clear all</string>
     <string name="error_security_answer">Do you forgot your security answer?</string>
-    <string name="ver_txt">get verification code</string>
+    <string name="ver_txt">Forgot your answer ?</string>
     <string name="network_problem">Please check your network connection</string>
     <string name="security_qn">Security Question</string>
     <string name="signup_sub">Set your security question and answer</string>

@@ -49,37 +49,38 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginTop="10dp"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:weightSum="1">
 
-                        <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
-                            android:id="@+id/autocomplete_qn"
-                            android:layout_width="fill_parent"
-                            android:padding="6dp"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/question"
-                            android:inputType="text"
-                            android:singleLine="true"
-                            android:focusable="true"
-                            android:focusableInTouchMode="true"
-                            android:imeOptions="actionNext"
-                            />
-                        <com.bridge.passwordHolder.uicomponents.PMTextView
-                            android:id="@+id/qn"
-                            android:layout_marginTop="8dp"
-                            android:layout_width="fill_parent"
-                            android:padding="6dp"
-                            android:layout_height="wrap_content"
-                            android:imeOptions="actionNext"
-                            android:textSize="16sp"
-                            android:visibility="gone"
-                            />
+                    <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/autocomplete_qn"
+                        android:layout_width="fill_parent"
+                        android:padding="6dp"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/question"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:imeOptions="actionNext"
+                        />
+                    <com.bridge.passwordHolder.uicomponents.PMTextView
+                        android:id="@+id/qn"
+                        android:layout_marginTop="16dp"
+                        android:layout_width="fill_parent"
+                        android:padding="6dp"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        />
 
                     <com.bridge.passwordHolder.uicomponents.PMEditText
                         android:id="@+id/answer"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:layout_width="fill_parent"
                         android:padding="6dp"
-                        android:layout_marginBottom="70dp"
+                        android:layout_marginBottom="30dp"
                         android:layout_height="wrap_content"
                         android:hint="@string/answer"
                         android:inputType="text"
@@ -88,32 +89,37 @@
                         android:textSize="16sp"
                         android:focusableInTouchMode="true"
                         />
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    <com.bridge.passwordHolder.uicomponents.PMButton
-                        android:id="@+id/btn_Go"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:text="@string/go"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center"
-                        android:background="@drawable/pressed_key"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="@android:color/white"/>
+                        <com.bridge.passwordHolder.uicomponents.PMTextView
+                            android:id="@+id/txt_Ver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ver_txt"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="left"
+                            android:textColor="@color/primary"
+                             />
 
+                        <com.bridge.passwordHolder.uicomponents.PMButton
+                            android:id="@+id/btn_Go"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="@string/go"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/pressed_key"
+                            android:textColor="@android:color/white"/>
+                    </RelativeLayout>
                 </LinearLayout>
 
 
-                <com.bridge.passwordHolder.uicomponents.PMTextView
-                    android:id="@+id/txt_Ver"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ver_txt"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:textColor="@color/secondary"
-
-                    />
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>

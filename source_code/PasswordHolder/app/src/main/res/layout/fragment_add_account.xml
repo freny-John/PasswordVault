@@ -12,17 +12,28 @@
         android:layout_width="match_parent"
         android:minHeight="?attr/actionBarSize"
         android:elevation="4dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
         android:background="@color/primary"
         app:theme="@style/AppTheme" >
-        <ImageView
-            android:id="@+id/back"
+        <com.andexert.library.RippleView
+            android:id="@+id/back_button_ripple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_arrow"
-            android:padding="4dp"
-            android:layout_gravity="left"
-            android:contentDescription="@string/back"
-            />
+            app:rv_color="@color/bg"
+            app:rv_centered="true"
+            >
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_arrow"
+                android:padding="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/back"
+                />
+        </com.andexert.library.RippleView>
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,15 +41,27 @@
             android:textColor="@android:color/white"
             android:layout_gravity="center"
             android:id="@+id/toolbar_title" />
-        <ImageView
+
+        <com.andexert.library.RippleView
             android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/tick"
-            android:padding="4dp"
+            app:rv_color="@color/bg"
+            app:rv_centered="true"
+            app:rv_rippleDuration="250"
             android:layout_margin="4dp"
+            android:layout_marginRight="12dp"
+            android:layout_gravity="right"
+            >
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tick"
+            android:padding="8dp"
             android:contentDescription="@string/add_account"
-            android:layout_gravity="right" />
+            />
+        </com.andexert.library.RippleView>
     </android.support.v7.widget.Toolbar>
 
     <ScrollView
@@ -96,15 +119,15 @@
                 android:paddingBottom="@dimen/text_layout_padding"
                 >
 
-                    <com.bridge.passwordHolder.uicomponents.ShowHidePasswordEditText
-                        android:id="@+id/account_password"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPassword"
-                        android:tag="0"
-                        android:hint="@string/password"
-                        style="@style/edit_text_style"
-                        android:paddingRight="55dp"/>
+                <com.bridge.passwordHolder.uicomponents.ShowHidePasswordEditText
+                    android:id="@+id/account_password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:tag="0"
+                    android:hint="@string/password"
+                    style="@style/edit_text_style"
+                    android:paddingRight="55dp"/>
 
 
 
@@ -118,7 +141,7 @@
                 <com.bridge.passwordHolder.uicomponents.PMEditText
                     android:id="@+id/account_details"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:hint="@string/notes"
                     android:imeOptions="actionDone"
