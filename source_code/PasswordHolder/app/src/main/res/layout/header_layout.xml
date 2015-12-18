@@ -9,10 +9,10 @@
     tools:showIn="@layout/activity_sign_up">
 
     <com.bridge.passwordHolder.Utils.TriangleBackgroundView
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="@dimen/header_top_margin"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/header_triangle_height"
         custom:tr_color_red="true">
 
     </com.bridge.passwordHolder.Utils.TriangleBackgroundView>
@@ -20,7 +20,7 @@
     <RelativeLayout
         android:layout_gravity="center_horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="130dp"
+        android:layout_height="@dimen/header_rect_height"
         android:background="@color/primary">
 
         <ImageView
@@ -37,7 +37,7 @@
     <RelativeLayout
 
         android:layout_height="106dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="@dimen/header_top_margin"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal">
         <com.bridge.passwordHolder.uicomponents.PMTextView

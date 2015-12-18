@@ -12,18 +12,29 @@
         android:layout_width="match_parent"
         android:minHeight="?attr/actionBarSize"
         android:gravity="center_vertical"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
         android:background="@color/primary"
         app:theme="@style/AppTheme" >
 
-        <ImageView
-            android:id="@+id/back"
+        <com.andexert.library.RippleView
+            android:id="@+id/back_button_ripple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_arrow"
-            android:padding="4dp"
-            android:contentDescription="@string/back"
-            />
-
+            app:rv_color="@color/bg"
+            app:rv_centered="true"
+            >
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_arrow"
+                android:padding="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/back"
+                />
+        </com.andexert.library.RippleView>
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,36 +65,52 @@
             android:weightSum="3"
             android:layout_margin="16dp"
             android:orientation="horizontal">
-
-            <FrameLayout
-                android:layout_margin="8dp"
+            <LinearLayout
                 android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_height="56dp">
-                <com.bridge.passwordHolder.uicomponents.RoundedLetterView
-                    android:layout_gravity="center_vertical"
-                    android:id="@+id/rlv_name_view"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    tools:visibility="visible"
-                    app:backgroundColorValue="@color/grey"
-                    app:titleColor="@android:color/white"
-                    app:titleSize="35dp"
-                    app:titleText=" " />
+                android:gravity="center"
+                android:layout_gravity="center">
+                <com.andexert.library.RippleView
 
-                <ImageView android:id="@+id/btn_delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/delete"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:padding="5dp"
-                    android:textColor="@android:color/white"
-                    android:contentDescription="@string/delete"/>
+                    android:id="@+id/delete_button_ripple"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:rv_color="@color/primary"
+                    app:rv_centered="true"
+                    app:rv_rippleDuration="150"
+                    >
+                    <FrameLayout
 
-            </FrameLayout>
+                        android:layout_width="56dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
 
+                        android:layout_height="56dp">
+                        <com.bridge.passwordHolder.uicomponents.RoundedLetterView
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/rlv_name_view"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            tools:visibility="visible"
+                            app:backgroundColorValue="@color/grey"
+                            app:titleColor="@android:color/white"
+                            app:titleSize="35dp"
+                            app:titleText=" " />
 
+                        <ImageView android:id="@+id/btn_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/delete"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:padding="5dp"
+                            android:textColor="@android:color/white"
+                            android:contentDescription="@string/delete"/>
+
+                    </FrameLayout>
+                </com.andexert.library.RippleView>
+            </LinearLayout>
             <LinearLayout
                 android:layout_margin="8dp"
                 android:layout_width="76dp"
@@ -106,34 +133,50 @@
 
             </LinearLayout>
 
-
-            <FrameLayout
-                android:layout_margin="8dp"
+            <LinearLayout
                 android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:layout_height="56dp">
-                <com.bridge.passwordHolder.uicomponents.RoundedLetterView
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:id="@+id/rlv_name_view1"
+                android:gravity="center"
+                >
+                <com.andexert.library.RippleView
+
+                    android:id="@+id/edit_button_ripple"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    tools:visibility="visible"
-                    app:backgroundColorValue="@color/grey"
-                    app:titleColor="@android:color/white"
-                    app:titleSize="35dp"
-                    app:titleText=" " />
+                    app:rv_color="@color/primary"
+                    app:rv_centered="true"
+                    app:rv_rippleDuration="150"
+                    >
+                    <FrameLayout
 
-                <ImageView android:id="@+id/btn_edit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/edit"
-                    android:foregroundGravity="center"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:tag="@string/btn_edit"
-                    android:contentDescription="@string/edit"
-                    android:textColor="@android:color/white"/>
-            </FrameLayout>
+                        android:layout_width="56dp"
+                        android:layout_gravity="center"
+                        android:layout_height="56dp">
+                        <com.bridge.passwordHolder.uicomponents.RoundedLetterView
+                            android:id="@+id/rlv_name_view1"
+                            android:layout_width="56dp"
+                            android:layout_height="match_parent"
+                            tools:visibility="visible"
+                            app:backgroundColorValue="@color/grey"
+                            app:titleColor="@android:color/white"
+                            app:titleSize="35dp"
+                            app:titleText=" " />
+
+                        <ImageView android:id="@+id/btn_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/edit"
+                            android:foregroundGravity="center"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:tag="@string/btn_edit"
+                            android:contentDescription="@string/edit"
+                            android:textColor="@android:color/white"/>
+                    </FrameLayout>
+                </com.andexert.library.RippleView>
+            </LinearLayout>
         </LinearLayout>
 
 
@@ -144,7 +187,8 @@
 
             <com.bridge.passwordHolder.uicomponents.PMTextViewBold
                 android:id="@+id/account_name"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:enabled="false"
@@ -180,11 +224,7 @@
             android:orientation="vertical"
             android:layout_marginTop="20dp"
             android:padding="16dp"
-
             >
-
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -206,7 +246,7 @@
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
-                    android:background="@color/dark_grey"></View>
+                    android:background="@color/light_grey"></View>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -234,23 +274,25 @@
                         android:layout_alignParentRight="true"
                         android:layout_height="wrap_content"
                         android:tag="0"
+                        android:padding="8dp"
                         >
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/eye_hidden"
-                            android:contentDescription="@string/hidden_password"/>
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/eye_not_hidden"
                             android:contentDescription="@string/visible_password"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/eye_hidden"
+                            android:contentDescription="@string/hidden_password"/>
+
                     </ViewSwitcher>
                 </RelativeLayout>
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
-                    android:background="@color/dark_grey"></View>
+                    android:background="@color/light_grey"></View>
             </LinearLayout>
 
 
@@ -273,7 +315,7 @@
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
-                    android:background="@color/dark_grey"></View>
+                    android:background="@color/light_grey"></View>
             </LinearLayout>
 
         </LinearLayout>

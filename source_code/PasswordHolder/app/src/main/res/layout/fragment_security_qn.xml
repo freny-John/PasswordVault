@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
     tools:context="com.bridge.passwordHolder.SecurityQnFragment"
     android:background="@color/bg">
@@ -123,4 +124,35 @@
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.bridge.passwordHolder.Utils.WaveLoadingView
+            android:id="@+id/waveLoadingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:wvBorderWidth="3"
+            app:borderColor="@color/primary"
+            app:progressValue="40"
+            app:shapeType="circle"
+            app:waveColor="@color/primary"
+            app:waveAmplitude="50"
+            app:titleTop="Top Title"
+            app:titleTopColor="@color/bg"
+            app:titleTopSize="20"
+            app:titleCenter="Center Title"
+            app:titleCenterColor="@color/bg"
+            app:titleCenterSize="24"
+            app:titleBottom="Bottom Title"
+            app:titleBottomColor="@color/bg"
+            app:titleBottomSize="20"/>
+
+    </LinearLayout>
 </RelativeLayout>

@@ -12,17 +12,29 @@
         android:minHeight="?attr/actionBarSize"
         android:elevation="4dp"
         android:gravity="center"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
         android:background="@color/primary"
         app:theme="@style/AppTheme"
         >
-        <ImageView
-            android:id="@+id/back"
+        <com.andexert.library.RippleView
+            android:id="@+id/back_button_ripple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_arrow"
-            android:padding="4dp"
-            android:contentDescription="@string/back"
-            />
+            app:rv_color="@color/bg"
+            app:rv_centered="true"
+            >
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_arrow"
+                android:padding="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="left"
+                android:contentDescription="@string/back"
+                />
+        </com.andexert.library.RippleView>
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +55,6 @@
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="fill_parent"
             android:layout_height="80dp"
-            android:background="@color/card_shadow"
             android:text="@string/reset_pin"
             android:gravity="center_vertical"
             android:textColor="@android:color/black"
@@ -54,19 +65,7 @@
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.5dp"
-            android:background="@color/black_de"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"></View>
-        <com.bridge.passwordHolder.uicomponents.PMTextView
-            android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:background="@color/card_shadow"
-            android:text="@string/about_app"
-            android:gravity="center_vertical"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:paddingLeft="16dp"
-            android:id="@+id/about"
-            android:textSize="16sp"/>
+            android:background="@color/light_grey"
+          ></View>
     </LinearLayout>
 </RelativeLayout>

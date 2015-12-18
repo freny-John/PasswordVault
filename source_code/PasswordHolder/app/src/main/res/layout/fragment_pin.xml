@@ -15,15 +15,23 @@
         android:background="@color/primary"
         app:theme="@style/AppTheme"
         android:visibility="gone">
-
+        <com.andexert.library.RippleView
+            android:id="@+id/back_button_ripple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rv_color="@color/bg"
+            app:rv_centered="true"
+            app:rv_rippleDuration="150"
+            >
         <ImageView
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back_arrow"
-            android:padding="4dp"
+            android:padding="8dp"
             android:contentDescription="@string/back"
             />
+        </com.andexert.library.RippleView>
 
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="wrap_content"

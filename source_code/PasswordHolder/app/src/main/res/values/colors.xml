@@ -5,9 +5,11 @@
    <color name="primary_light">#77F2395B</color>
     <color name="default_color">#DE000000</color>
     <color name="pressed_text_color">#ffffff</color>
-    <color name="bg">#ffffff</color>
+    <color name="bg">#ffffffff</color>
     <color name="accent">#F7F7F7</color>
     <color name="blur">#40FFFFFF</color>
+    <!--<color name="fab_color">#333B43</color>-->
+    <color name="fab_color">#A4B7C8</color>
 <!--
     <color name="primary_dark">#88f70f0e</color>
 -->
@@ -36,6 +38,7 @@
     <color name="grey">#F6F6F6</color>
     <color name="light_grey">#EEEEEE</color>
     <color name="dark_grey">#B4B4B4</color>
+    <color name="dark_grey1">#888888</color>
     <color name="text_black">#363636</color>
     <color name="text_sub_black">#D1D1D1</color>
 

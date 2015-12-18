@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.bridge.passwordHolder.SignUpFragment">
+
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -77,4 +78,5 @@
         </LinearLayout>
     </ScrollView>
     </android.support.design.widget.CoordinatorLayout>
+
 </FrameLayout>

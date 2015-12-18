@@ -134,7 +134,7 @@ public class WaveLoadingView extends View {
         mBorderPaint = new Paint();
         mBorderPaint.setAntiAlias(true);
         mBorderPaint.setStyle(Paint.Style.STROKE);
-        mBorderPaint.setStrokeWidth(attributes.getInteger(R.styleable.WaveLoadingView_borderWidth, DEFAULT_BORDER_WIDTH));
+        mBorderPaint.setStrokeWidth(attributes.getInteger(R.styleable.WaveLoadingView_wvBorderWidth, DEFAULT_BORDER_WIDTH));
         mBorderPaint.setColor(attributes.getColor(R.styleable.WaveLoadingView_borderColor, DEFAULT_WAVE_COLOR));
 
         // Init Title

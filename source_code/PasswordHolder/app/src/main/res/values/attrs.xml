@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="WaveLoadingView">
-        <attr name="borderWidth" format="integer"/>
+        <attr name="wvBorderWidth" format="integer"/>
         <attr name="borderColor" format="color"/>
         <attr name="progressValue" format="integer"/>
         <attr name="shapeType">

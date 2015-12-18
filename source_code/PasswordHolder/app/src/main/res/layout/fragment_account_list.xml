@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/add"
             app:elevation="4dp"
-            app:backgroundTint="@color/secondary"
+            app:backgroundTint="@color/primary"
             app:pressedTranslationZ="8dp"
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"

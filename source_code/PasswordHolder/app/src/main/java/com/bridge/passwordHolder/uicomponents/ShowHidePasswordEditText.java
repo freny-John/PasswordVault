@@ -30,9 +30,9 @@ public class ShowHidePasswordEditText extends EditText {
     private Rect bounds;
 
     @DrawableRes
-    private int visibilityIndicatorShow = R.drawable.eye_hidden;
+    private int visibilityIndicatorShow = R.drawable.eye_not_hidden;
     @DrawableRes
-    private int visibilityIndicatorHide = R.drawable.eye_not_hidden;
+    private int visibilityIndicatorHide = R.drawable.eye_hidden;
 
     public ShowHidePasswordEditText(Context context) {
         super(context);
