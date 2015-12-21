@@ -51,7 +51,13 @@
         android:layout_height="fill_parent"
         android:orientation="vertical"
         android:layout_below="@+id/my_toolbar">
-
+        <com.andexert.library.RippleView
+            android:id="@+id/reset_pin_button_ripple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rv_color="@color/primary"
+            app:rv_centered="true"
+            >
         <com.bridge.passwordHolder.uicomponents.PMTextView
             android:layout_width="fill_parent"
             android:layout_height="80dp"
@@ -62,6 +68,7 @@
             android:paddingLeft="16dp"
             android:id="@+id/reset_pin"
             android:textSize="16sp"/>
+        </com.andexert.library.RippleView>
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.5dp"

@@ -92,7 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:hint="@string/accout_type"
+                    android:hint="@string/account_type"
                     style="@style/edit_text_style"/>
             </android.support.design.widget.TextInputLayout>
 

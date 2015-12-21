@@ -34,7 +34,7 @@
                     android:inputType="text"
                     android:focusableInTouchMode="true"
                     android:gravity="center_horizontal"
-                    android:hint="@string/firstname"
+                    android:hint="@string/first_name"
                     android:layout_marginTop="@dimen/edit_text_top_margin"
                     />
 

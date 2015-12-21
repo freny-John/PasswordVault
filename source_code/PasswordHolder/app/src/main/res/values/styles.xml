@@ -11,23 +11,23 @@
         <item name="android:windowContentTransitions">true</item>
     </style>
     <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-    <item name="windowActionBar">false</item></style>
-    <style name="keystyle" parent="keyspec">
-        <item name="android:background">@drawable/passwordkey_selecter</item>
+        <item name="windowActionBar">false</item></style>
+    <style name="key_style" parent="key_spec">
+        <item name="android:background">@drawable/password_key_selector</item>
         <item name="android:textColor">@color/key_text_color</item>
 
     </style>
-    <style name="keyset" parent="keyspec">
-        <item name="android:background">@drawable/set_key_selecter</item>
+    <style name="key_set" parent="key_spec">
+        <item name="android:background">@drawable/set_key_selector</item>
         <item name="android:textColor">@color/bg</item>
 
     </style>
-    <style name="keybackspace" parent="keyspec">
-        <item name="android:background">@drawable/bs_key_selecter</item>
+    <style name="key_backspace" parent="key_spec">
+        <item name="android:background">@drawable/bs_key_selector</item>
         <item name="android:textColor">@color/bs_key_text_color</item>
 
     </style>
-    <style name="keyspec" parent="android:Widget.Button">
+    <style name="key_spec" parent="android:Widget.Button">
 
         <item name="android:layout_marginLeft">@dimen/padding_bw_keys</item>
         <item name="android:layout_marginRight">@dimen/padding_bw_keys</item>
@@ -40,7 +40,7 @@
     </style>
 
     <style name="key_indicate_style"  parent="android:Widget.Button">
-        <item name="android:background">@drawable/indicate_key_selecter</item>
+        <item name="android:background">@drawable/indicate_key_selector</item>
         <item name="android:layout_margin">3dp</item>
     </style>
     <style name="edit_text_style"  parent="android:Widget.EditText">
@@ -66,7 +66,8 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowActionBar">false</item>
-    </style>    <style name="White" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    </style>
+    <style name="White" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:colorBackgroundCacheHint">@null</item>

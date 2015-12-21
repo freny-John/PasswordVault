@@ -100,7 +100,7 @@
                     android:id="@+id/key1"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:tag="1"
                     android:text="@string/one"
                     />
@@ -108,7 +108,7 @@
                     android:id="@+id/key2"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:tag="2"
                     android:text="@string/two"
                     />
@@ -116,7 +116,7 @@
                     android:id="@+id/key3"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:text="@string/three"
                     android:tag="3"
 
@@ -133,7 +133,7 @@
                     android:id="@+id/key4"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:tag="4"
                     android:text="@string/four"
                     />
@@ -141,7 +141,7 @@
                     android:id="@+id/key5"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:text="@string/five"
                     android:tag="5"
                     />
@@ -149,7 +149,7 @@
                     android:id="@+id/key6"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:text="@string/six"
                     android:tag="6"
                     />
@@ -165,7 +165,7 @@
                     android:id="@+id/key7"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:text="@string/seven"
                     android:tag="7"
                     />
@@ -173,7 +173,7 @@
                     android:id="@+id/key8"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:text="@string/eight"
                     android:tag="8"
                     />
@@ -181,7 +181,7 @@
                     android:id="@+id/key9"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:text="@string/nine"
                     android:tag="9"
                     />
@@ -198,7 +198,7 @@
                     android:id="@+id/keyb"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keybackspace"
+                    style="@style/key_backspace"
                     android:text="@string/backspace"
                     android:tag="b"
                     />
@@ -207,7 +207,7 @@
                     android:id="@+id/key0"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keystyle"
+                    style="@style/key_style"
                     android:text="@string/zero"
                     android:tag="0"
                     />
@@ -215,7 +215,7 @@
                     android:id="@+id/confirm"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
-                    style="@style/keyset"
+                    style="@style/key_set"
                     android:text="@string/set"
                     android:tag="@string/done"
                     />

@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-   <color name="primary">#F2395B</color>
-   <color name="primary_light">#77F2395B</color>
+    <color name="primary">#F2395B</color>
+    <color name="primary_light">#77F2395B</color>
     <color name="default_color">#DE000000</color>
     <color name="pressed_text_color">#ffffff</color>
     <color name="bg">#ffffffff</color>
     <color name="accent">#F7F7F7</color>
     <color name="blur">#40FFFFFF</color>
-    <!--<color name="fab_color">#333B43</color>-->
     <color name="fab_color">#A4B7C8</color>
-<!--
-    <color name="primary_dark">#88f70f0e</color>
--->
     <color name="list_dark_color">#d71977</color>
     <color name="status_bar_color">#bbFF395B</color>
     <color name="secondary">#18FFFF</color>
-    <!--<color name="secondary">#72AE2D</color>-->
     <color name="text_color_primary">#FFFFFF</color>
     <color name="bright_pink">#FF007F</color>
     <color name="red">#FF0000</color>
@@ -30,7 +25,6 @@
     <color name="blue">#0000FF</color>
     <color name="violet">#7F00FF</color>
     <color name="magenta">#FF00FF</color>
-
     <color name="card_background">#ffffff</color>
     <color name="card_shadow">#10000000</color>
     <color name="black_de">#DE000000</color>
@@ -43,18 +37,5 @@
     <color name="text_black">#363636</color>
     <color name="text_sub_black">#D1D1D1</color>
 
-    <array name="colors">
-        <item>@color/bright_pink</item>
-        <item>@color/red</item>
-        <item>@color/orange</item>
-        <item>@color/yellow</item>
-        <item>@color/chartreuse</item>
-        <item>@color/green</item>
-        <item>@color/spring_green</item>
-        <item>@color/cyan</item>
-        <item>@color/azure</item>
-        <item>@color/blue</item>
-        <item>@color/violet</item>
-        <item>@color/magenta</item>
-    </array>
+
 </resources>
