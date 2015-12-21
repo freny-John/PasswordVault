@@ -30,7 +30,7 @@
     <string name="delete_title">Do you want to delete?</string>
     <string name="finish_app">Do you want to exit?</string>
     <string name="delete_text">Do you really want to delete&#160;</string>
-    <string name="finish_text">Do you really want to exit from Password Holder ?</string>
+    <string name="finish_text">Do you really want to exit from \'Safe\' ?</string>
     <string name="pass_code">pM123#</string>
     <string name="pass_code1">pM456!</string>
     <string name="btn_done">Done</string>
@@ -102,7 +102,8 @@
     <string name="validate_security_qn">Please enter your security question.</string>
     <string name="validate_security_ans">Please enter your answer.</string>
     <string name="delete_item">" account details?"</string>
-    <string name="loading">Loading..</string>
+    <string name="loading">Please wait..</string>
+    <string name="error_bad_request">Bad Request.Please try again.</string>
     <string name="email_already_exists">Email Already taken.Try with another email account.</string>
 
     <string-array name="qn_array">

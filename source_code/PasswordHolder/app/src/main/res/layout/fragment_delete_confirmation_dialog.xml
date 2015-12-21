@@ -77,31 +77,31 @@
                 android:gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-               <!-- <com.andexert.library.RippleView
+                <!-- <com.andexert.library.RippleView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content">-->
+                <com.bridge.passwordHolder.uicomponents.PMButton
+                    android:text="@string/cancel"
+                    android:id="@+id/btn_n"
+                    android:textSize="14sp"
+                    android:background="@drawable/button"
+                    android:textColor="@color/black_de"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">-->
-                    <com.bridge.passwordHolder.uicomponents.PMButton
-                        android:text="@string/cancel"
-                        android:id="@+id/btn_n"
-                        android:textSize="14sp"
-                        android:background="@drawable/button"
-                        android:textColor="@color/black_de"
-                        android:layout_width="wrap_content"
-                        android:layout_height="34dp"/>
+                    android:layout_height="34dp"/>
                 <!--</com.andexert.library.RippleView>-->
-              <!--  <com.andexert.library.RippleView
+                <!--  <com.andexert.library.RippleView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content">-->
+                <com.bridge.passwordHolder.uicomponents.PMButton
+                    android:text="@string/ok"
+                    android:textSize="14sp"
+                    android:layout_marginRight="6dp"
+                    android:id="@+id/btn_p"
+                    android:textColor="@color/secondary"
+                    android:background="@drawable/button"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">-->
-                    <com.bridge.passwordHolder.uicomponents.PMButton
-                        android:text="@string/ok"
-                        android:textSize="14sp"
-                        android:layout_marginRight="6dp"
-                        android:id="@+id/btn_p"
-                        android:textColor="@color/secondary"
-                        android:background="@drawable/button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="34dp"/>
-               <!-- </com.andexert.library.RippleView>-->
+                    android:layout_height="34dp"/>
+                <!-- </com.andexert.library.RippleView>-->
             </LinearLayout>
 
         </RelativeLayout>

@@ -53,14 +53,14 @@
             android:layout_marginRight="12dp"
             android:layout_gravity="right"
             >
-        <ImageView
+            <ImageView
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/tick"
-            android:padding="8dp"
-            android:contentDescription="@string/add_account"
-            />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tick"
+                android:padding="8dp"
+                android:contentDescription="@string/add_account"
+                />
         </com.andexert.library.RippleView>
     </android.support.v7.widget.Toolbar>
 
@@ -147,14 +147,7 @@
                     style="@style/edit_text_style"/>
             </android.support.design.widget.TextInputLayout>
 
-            <!--  <com.bridge.passwordHolder.uicomponents.PMButton
-                  android:id="@+id/btn_add"
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:text="@string/add_account"
-                  android:background="@color/primary"
-                  android:layout_marginTop="40dp"
-                  android:textColor="@android:color/white"/>-->
+
         </LinearLayout>
     </ScrollView>
 

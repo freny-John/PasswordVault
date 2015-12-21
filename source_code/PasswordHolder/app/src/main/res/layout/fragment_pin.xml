@@ -23,14 +23,14 @@
             app:rv_centered="true"
             app:rv_rippleDuration="150"
             >
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/back_arrow"
-            android:padding="8dp"
-            android:contentDescription="@string/back"
-            />
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_arrow"
+                android:padding="8dp"
+                android:contentDescription="@string/back"
+                />
         </com.andexert.library.RippleView>
 
         <com.bridge.passwordHolder.uicomponents.PMTextView
@@ -42,9 +42,9 @@
             android:id="@+id/toolbar_title" />
 
     </android.support.v7.widget.Toolbar>
-   <!-- <include layout="@layout/header_layout" />-->
+    <!-- <include layout="@layout/header_layout" />-->
     <RelativeLayout
-       android:id="@+id/keypad_container"
+        android:id="@+id/keypad_container"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
@@ -54,7 +54,9 @@
             android:id="@+id/indicate_layout"
             android:layout_width="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/key_indicate_margin_top"
+            android:layout_marginBottom="@dimen/key_indicate_margin_bottom">
             <com.bridge.passwordHolder.uicomponents.PMButton
                 android:id="@+id/ind1"
                 android:layout_width="@dimen/ind_width"

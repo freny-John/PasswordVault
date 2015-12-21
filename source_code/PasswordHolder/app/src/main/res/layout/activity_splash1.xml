@@ -46,17 +46,17 @@
             android:layout_height="wrap_content"
             android:textColor="@color/bg"/>
     </LinearLayout>
-   <!-- <com.bridge.passwordHolder.Utils.RightTriangleBackgroundView
-        android:layout_gravity="center_horizontal|top"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/view1"
-        custom:tr_color_red="false" />
-    <com.bridge.passwordHolder.Utils.RightTriangleBackgroundView
-        android:layout_gravity="center_horizontal|top"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:rotation="180"
-        android:id="@+id/view2"
-        custom:tr_color_red="false" />-->
+    <!-- <com.bridge.passwordHolder.Utils.RightTriangleBackgroundView
+         android:layout_gravity="center_horizontal|top"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/view1"
+         custom:tr_color_red="false" />
+     <com.bridge.passwordHolder.Utils.RightTriangleBackgroundView
+         android:layout_gravity="center_horizontal|top"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:rotation="180"
+         android:id="@+id/view2"
+         custom:tr_color_red="false" />-->
 </RelativeLayout>

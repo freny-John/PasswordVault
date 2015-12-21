@@ -9,11 +9,11 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="fill_parent">
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
@@ -30,20 +30,16 @@
                 android:textStyle="bold"
                 android:layout_height="wrap_content" />
 
-            <!--<com.bridge.passwordHolder.uicomponents.PMTextView
-                android:id="@+id/description"
-                android:layout_below="@+id/title"
-                android:layout_width="fill_parent"
-                android:gravity="center_horizontal"
-                android:text="@string/security_qn_description"
-                android:layout_height="wrap_content" />-->
+
 
             <RelativeLayout
                 android:visibility="visible"
                 android:layout_below="@+id/title"
                 android:id="@+id/button_pane"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -64,6 +60,7 @@
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         android:imeOptions="actionNext"
+                        android:textSize="16sp"
                         />
                     <com.bridge.passwordHolder.uicomponents.PMTextView
                         android:id="@+id/qn"
@@ -105,7 +102,7 @@
                             android:layout_centerVertical="true"
                             android:gravity="left"
                             android:textColor="@color/primary"
-                             />
+                            />
 
                         <com.bridge.passwordHolder.uicomponents.PMButton
                             android:id="@+id/btn_Go"

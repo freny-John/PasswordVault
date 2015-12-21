@@ -13,7 +13,8 @@
 <!--
     <color name="primary_dark">#88f70f0e</color>
 -->
-    <color name="primary_dark">#d71977</color>
+    <color name="list_dark_color">#d71977</color>
+    <color name="status_bar_color">#bbFF395B</color>
     <color name="secondary">#18FFFF</color>
     <!--<color name="secondary">#72AE2D</color>-->
     <color name="text_color_primary">#FFFFFF</color>

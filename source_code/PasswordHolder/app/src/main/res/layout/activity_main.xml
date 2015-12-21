@@ -13,12 +13,12 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/snack_bar_location">
 
-    <FrameLayout
-        android:layout_below="@+id/my_toolbar"
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bg"/>
+        <FrameLayout
+            android:layout_below="@+id/my_toolbar"
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg"/>
 
     </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>
