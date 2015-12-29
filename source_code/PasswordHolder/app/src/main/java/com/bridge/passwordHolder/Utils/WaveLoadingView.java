@@ -174,7 +174,7 @@ public class WaveLoadingView extends View {
                 mWavePaint.setShader(mWaveShader);
             }
 
-            // Sacle shader according to waveLengthRatio and amplitudeRatio.
+            // Scale shader according to waveLengthRatio and amplitudeRatio.
             // This decides the size(waveLengthRatio for width, amplitudeRatio for height) of waves.
             mShaderMatrix.setScale(1, mAmplitudeRatio / DEFAULT_AMPLITUDE_RATIO, 0, mDefaultWaterLevel);
             // Translate shader according to waveShiftRatio and waterLevelRatio.
@@ -260,7 +260,7 @@ public class WaveLoadingView extends View {
         wavePaint.setAntiAlias(true);
 
         // Draw default waves into the bitmap.
-        // y=Asin(ωx+φ)+h
+        // y=A sin(ωx+φ)+h
         final int endX = getWidth() + 1;
         final int endY = getHeight() + 1;
 
@@ -280,7 +280,7 @@ public class WaveLoadingView extends View {
             canvas.drawLine(beginX, waveY[(beginX + wave2Shift) % endX], beginX, endY, wavePaint);
         }
 
-        // Use the bitamp to create the shader.
+        // Use the bitmap to create the shader.
         mWaveShader = new BitmapShader(bitmap, Shader.TileMode.REPEAT, Shader.TileMode.CLAMP);
         this.mWavePaint.setShader(mWaveShader);
     }
@@ -481,7 +481,7 @@ public class WaveLoadingView extends View {
         mTopTitlePaint.setTextSize(sp2px(topTitleSize));
     }
 
-    public float getsetTopTitleSize() {
+    public float getTopTitleSize() {
         return mTopTitlePaint.getTextSize();
     }
 

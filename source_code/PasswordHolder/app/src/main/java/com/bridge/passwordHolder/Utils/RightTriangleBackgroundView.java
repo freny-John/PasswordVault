@@ -2,7 +2,6 @@ package com.bridge.passwordHolder.Utils;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
@@ -71,7 +70,6 @@ public class RightTriangleBackgroundView extends View {
         int w = getMeasuredWidth();
 
         canvas.drawRect(0, 0, w, h, bgPaint);
-        float radius = 50.0f;
 
         path= new Path();
         path.moveTo(0, h);

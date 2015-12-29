@@ -66,13 +66,14 @@
                 <com.bridge.passwordHolder.uicomponents.PMButton
 
                     android:id="@+id/btn_signup"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="@dimen/key_width"
+                    android:layout_height="@dimen/key_width"
                     android:text="@string/go"
                     android:layout_gravity="bottom|center_horizontal"
                     android:gravity="center"
                     android:background="@drawable/pressed_key"
                     android:layout_marginTop="20dp"
+                    style="@style/key_go"
                     android:textColor="@android:color/white"/>
 
             </LinearLayout>

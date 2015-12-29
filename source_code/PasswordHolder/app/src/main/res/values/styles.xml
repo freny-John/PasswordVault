@@ -22,6 +22,12 @@
         <item name="android:textColor">@color/bg</item>
 
     </style>
+    <style name="key_go" parent="key_set">
+        <item name="android:background">@drawable/set_key_selector</item>
+        <item name="android:textColor">@color/bg</item>
+        <item name="android:layout_marginBottom">12dp</item>
+
+    </style>
     <style name="key_backspace" parent="key_spec">
         <item name="android:background">@drawable/bs_key_selector</item>
         <item name="android:textColor">@color/bs_key_text_color</item>
@@ -31,8 +37,8 @@
 
         <item name="android:layout_marginLeft">@dimen/padding_bw_keys</item>
         <item name="android:layout_marginRight">@dimen/padding_bw_keys</item>
-        <item name="android:layout_marginTop">@dimen/padding_top</item>
-        <item name="android:layout_marginBottom">@dimen/padding_top</item>
+        <item name="android:layout_marginTop">@dimen/padding__key_top</item>
+        <item name="android:layout_marginBottom">@dimen/padding_bottom</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

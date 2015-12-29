@@ -106,6 +106,17 @@
 
                         <com.bridge.passwordHolder.uicomponents.PMButton
                             android:id="@+id/btn_Go"
+                            android:layout_width="@dimen/key_width"
+                            android:layout_height="@dimen/key_width"
+                            android:text="@string/go"
+                            android:gravity="center"
+                            style="@style/key_go"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/pressed_key"
+                            android:textColor="@android:color/white"/><!--
+                        <com.bridge.passwordHolder.uicomponents.PMButton
+                            android:id="@+id/btn_Go"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:text="@string/go"
@@ -113,7 +124,7 @@
                             android:layout_centerVertical="true"
                             android:layout_alignParentRight="true"
                             android:background="@drawable/pressed_key"
-                            android:textColor="@android:color/white"/>
+                            android:textColor="@android:color/white"/>-->
                     </RelativeLayout>
                 </LinearLayout>
 

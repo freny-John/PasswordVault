@@ -90,7 +90,8 @@
             android:layout_below="@+id/indicate_layout"
             android:layout_width="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp">
             <LinearLayout
                 android:id="@+id/row1"
                 android:layout_centerHorizontal="true"

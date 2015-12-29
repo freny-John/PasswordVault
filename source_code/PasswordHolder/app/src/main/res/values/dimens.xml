@@ -4,15 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="list_item_text_head_size">16sp</dimen>
     <dimen name="list_item_text_sub_size">13sp</dimen>
-    <dimen name="margin_top">4dp</dimen>
-    <dimen name="margin_bottom">4dp</dimen>
-    <dimen name="margin_left">0dp</dimen>
-    <dimen name="margin_right">0dp</dimen>
 
-    <dimen name="dialog_padding_side">24dp</dimen>
-    <dimen name="dialog_padding_top">24dp</dimen>
-    <dimen name="dialog_padding_buttons">8dp</dimen>
-    <dimen name="dialog_button_height">36dp</dimen>
 
     <!--
         keys dimens
@@ -22,6 +14,8 @@
     <dimen name="key_inner_radius">48dp</dimen><!--keywidth/2-2dp since thickness is 2dp-->
     <dimen name="padding_bw_keys">14dp</dimen>
     <dimen name="padding_top">6dp</dimen>
+    <dimen name="padding_bottom">8dp</dimen>
+    <dimen name="padding__key_top">4dp</dimen>
     <dimen name="ind_width">16dp</dimen>
     <dimen name="button_padding">16dp</dimen>
     <dimen name="button_right_padding">6dp</dimen>
@@ -33,7 +27,6 @@
     <dimen name="header_triangle_height">100dp</dimen>
     <dimen name="header_top_margin">110dp</dimen>
     <dimen name="account_head_text_size">18sp</dimen>
-    <dimen name="default_text_size">14sp</dimen>
     <dimen name="logo_width">75dp</dimen>
     <dimen name="key_indicate_margin_bottom">2dp</dimen>
     <dimen name="key_indicate_margin_top">2dp</dimen>

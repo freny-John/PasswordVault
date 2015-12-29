@@ -17,7 +17,6 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 import com.bridge.passwordHolder.R;
-import com.bridge.passwordHolder.Utils.PLog;
 
 
 /**
@@ -116,7 +115,6 @@ public class ShowHidePasswordEditText extends EditText {
         if (event.getAction() == MotionEvent.ACTION_UP && drawableRight != null) {
             bounds = drawableRight.getBounds();
             final int x = (int) event.getX();
-            final int y = (int) event.getY();
             //check if the touch is within bounds of drawableRight icon
             if (x >= (this.getRight() - bounds.width())
                     && x <= (this.getRight() - this.getPaddingRight())) {
@@ -191,7 +189,7 @@ public class ShowHidePasswordEditText extends EditText {
     }
 
     /**
-     * @return true if the password is visable | false if hidden
+     * @return true if the password is visible | false if hidden
      */
     public boolean isShowingPassword() {
         return isShowingPassword;
