@@ -27,6 +27,9 @@ public class ShowHidePasswordEditText extends android.support.v7.widget.AppCompa
     private Drawable drawableRight;
     private Rect bounds;
 
+    Typeface tf;
+
+
     @DrawableRes
     private int visibilityIndicatorShow = R.drawable.eye_not_hidden;
     @DrawableRes
@@ -58,7 +61,11 @@ public class ShowHidePasswordEditText extends android.support.v7.widget.AppCompa
 
     private void init(AttributeSet attrs) {
 
+        tf = Typeface.createFromAsset(getContext().getAssets(),
+                "fonts/Optima.ttf");
+
         if (attrs != null) {
+
             TypedArray attrsArray =
                     getContext().obtainStyledAttributes(attrs, R.styleable.ShowHidePasswordEditText);
 
@@ -78,6 +85,7 @@ public class ShowHidePasswordEditText extends android.support.v7.widget.AppCompa
         addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
 
             @Override
@@ -93,9 +101,8 @@ public class ShowHidePasswordEditText extends android.support.v7.widget.AppCompa
             public void afterTextChanged(Editable s) {
             }
         });
-        Typeface tf = Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLTPro-Lt.otf");
         setTypeface(tf);
+
     }
 
     @Override

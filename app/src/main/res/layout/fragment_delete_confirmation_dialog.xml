@@ -22,7 +22,7 @@
             android:layout_height="0dp"
             android:orientation="vertical">
 
-            <com.bridge.passwordHolder.uicomponents.PMTextViewBold
+            <com.bridge.passwordholder.uicomponents.PMTextViewBold
                 android:textColor="@color/primary"
                 android:textSize="21sp"
 
@@ -49,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <com.bridge.passwordHolder.uicomponents.PMTextView
+                    <com.bridge.passwordholder.uicomponents.PMTextView
                         android:id="@+id/message"
                         android:textColor="#8a000000"
                         android:textSize="16sp"
@@ -80,7 +80,7 @@
                 <!-- <com.andexert.library.RippleView
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content">-->
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:text="@string/cancel"
                     android:id="@+id/btn_n"
                     android:textSize="14sp"
@@ -92,7 +92,7 @@
                 <!--  <com.andexert.library.RippleView
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content">-->
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:text="@string/ok"
                     android:textSize="14sp"
                     android:layout_marginRight="6dp"

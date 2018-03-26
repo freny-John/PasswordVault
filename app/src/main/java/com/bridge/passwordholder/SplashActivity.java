@@ -38,6 +38,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash1);
+
         imageLogo =(ImageView) findViewById(R.id.image_logo);
         topText= (TextView) findViewById(R.id.topText);
         splashContainer=(RelativeLayout) findViewById(R.id.splash_container);

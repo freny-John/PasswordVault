@@ -1,7 +1,11 @@
 package com.bridge.passwordholder;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ContentValues;
+import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -15,9 +19,12 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,11 +35,12 @@ import com.bridge.passwordholder.Utils.Crypto;
 import com.bridge.passwordholder.model.AccountListItem;
 import com.bridge.passwordholder.provider.ProviderMetadata;
 
-import com.bridge.passwordholder.R;
+
 public class AddAccountFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private RippleView btn_add;
+    private ImageButton btn_email_copy,btn_password_copy;
     private EditText accountName;
     private EditText accountUsername;
     private EditText accountPassword;
@@ -61,13 +69,50 @@ public class AddAccountFragment extends Fragment {
             }
         }
         initUi(v);
-        btn_add.setOnRippleCompleteListener(rippleView -> submitForm());
+       // btn_add.setOnRippleCompleteListener(rippleView -> submitForm());
+
+        btn_add.setOnRippleCompleteListener(rippleView -> {
+
+      submitForm();
+
+            Toast.makeText(getActivity(),"Submit",Toast.LENGTH_LONG).show();
+        });
+
+
+        btn_email_copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ClipboardManager cManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData cData = ClipData.newPlainText("text", accountUsername.getText().toString());
+                cManager.setPrimaryClip(cData);
+
+                Toast.makeText(getActivity(),"Copied To Clipboard",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        btn_password_copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ClipboardManager cManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData cData = ClipData.newPlainText("text", accountPassword.getText().toString());
+                cManager.setPrimaryClip(cData);
+                Toast.makeText(getActivity(),"Copied To Clipboard",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         return v;
     }
 
     private void initUi(View v) {
 
         btn_add= (RippleView) v.findViewById(R.id.btn_add);
+        btn_email_copy= (ImageButton) v.findViewById(R.id.button_add_email_clipboard);
+        btn_password_copy= (ImageButton) v.findViewById(R.id.button_add_pass_clipboard);
+
         accountName=(EditText) v.findViewById(R.id.account_name);
         accountUsername=(EditText)v.findViewById(R.id.account_username);
         accountPassword=(EditText)v.findViewById(R.id.account_password);
@@ -76,6 +121,9 @@ public class AddAccountFragment extends Fragment {
         accountLayoutName=(TextInputLayout) v.findViewById(R.id.account_layout_name);
         accountLayoutUsername=(TextInputLayout) v.findViewById(R.id.account_layout_username);
         accountLayoutPassword=(TextInputLayout) v.findViewById(R.id.account_layout_password);
+        Typeface tf = tf = Typeface.createFromAsset(getContext().getAssets(),
+                "fonts/Optima.ttf");
+        accountLayoutPassword.setTypeface(tf);
         back_button_ripple= (RippleView) v.findViewById(R.id.back_button_ripple);
         back=(ImageView) v.findViewById(R.id.back);
 

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,6 +12,7 @@ import java.util.regex.Pattern;
 import org.json.JSONObject;
 
 import android.os.Build;
+import android.util.Log;
 import android.widget.EditText;
 
 public class CommonUtils {
@@ -18,14 +20,23 @@ public class CommonUtils {
 	//private static final String SERVER_URL="http://inddev.pingstamp.mx/pfandl/mobile.php";
 
 
-	public static String getJSON(Map<String, String> input)
+	public static String getJSON(HashMap<String, String> input)
 	{
 		try
 		{
+			Log.e("Json Input", String.valueOf(input));
+
 			final JSONObject json=new JSONObject(input);
+
+			Log.e("Json Output",json.toString());
+
 			return json.toString();
 
+
+
 		}catch (NullPointerException e) {
+			Log.e("Json Error", String.valueOf(e));
+
 			return null;
 		}
 	}

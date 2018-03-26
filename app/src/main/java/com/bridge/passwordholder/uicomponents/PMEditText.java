@@ -25,7 +25,7 @@ public class PMEditText extends android.support.v7.widget.AppCompatEditText {
 
     private void init() {		 
         Typeface tf = Typeface.createFromAsset(getContext().getAssets(),
-                                               "fonts/HelveticaNeueLTPro-Lt.otf");
+                                               "fonts/Optima.ttf");
         setTypeface(tf);
         
         

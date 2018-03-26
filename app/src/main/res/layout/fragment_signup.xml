@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.bridge.passwordHolder.SignUpFragment">
+    tools:context="com.bridge.passwordholder.SignUpFragment">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="fill_parent"
@@ -25,7 +25,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp">
 
-                <com.bridge.passwordHolder.uicomponents.PMEditText
+                <com.bridge.passwordholder.uicomponents.PMEditText
                     android:id="@+id/first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
                     />
 
 
-                <com.bridge.passwordHolder.uicomponents.PMEditText
+                <com.bridge.passwordholder.uicomponents.PMEditText
                     android:id="@+id/last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                     android:layout_marginTop="@dimen/edit_text_top_margin"/>
 
 
-                <com.bridge.passwordHolder.uicomponents.PMEditText
+                <com.bridge.passwordholder.uicomponents.PMEditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                     android:layout_marginTop="@dimen/edit_text_top_margin"/>
 
 
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
 
                     android:id="@+id/btn_signup"
                     android:layout_width="@dimen/key_width"

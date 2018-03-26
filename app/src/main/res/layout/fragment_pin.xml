@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg"
-    tools:context="com.bridge.passwordHolder.PinFragment">
+    tools:context="com.bridge.passwordholder.PinFragment">
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 />
         </com.andexert.library.RippleView>
 
-        <com.bridge.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordholder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/reset_pin"
@@ -57,34 +57,34 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/key_indicate_margin_top"
             android:layout_marginBottom="@dimen/key_indicate_margin_bottom">
-            <com.bridge.passwordHolder.uicomponents.PMButton
+            <com.bridge.passwordholder.uicomponents.PMButton
                 android:id="@+id/ind1"
                 android:layout_width="@dimen/ind_width"
                 android:layout_height="@dimen/ind_width"
                 style="@style/key_indicate_style">
 
-            </com.bridge.passwordHolder.uicomponents.PMButton>
-            <com.bridge.passwordHolder.uicomponents.PMButton
+            </com.bridge.passwordholder.uicomponents.PMButton>
+            <com.bridge.passwordholder.uicomponents.PMButton
                 android:id="@+id/ind2"
                 android:layout_width="@dimen/ind_width"
                 android:layout_height="@dimen/ind_width"
                 style="@style/key_indicate_style">
 
-            </com.bridge.passwordHolder.uicomponents.PMButton>
-            <com.bridge.passwordHolder.uicomponents.PMButton
+            </com.bridge.passwordholder.uicomponents.PMButton>
+            <com.bridge.passwordholder.uicomponents.PMButton
                 android:id="@+id/ind3"
                 android:layout_width="@dimen/ind_width"
                 android:layout_height="@dimen/ind_width"
                 style="@style/key_indicate_style">
 
-            </com.bridge.passwordHolder.uicomponents.PMButton>
-            <com.bridge.passwordHolder.uicomponents.PMButton
+            </com.bridge.passwordholder.uicomponents.PMButton>
+            <com.bridge.passwordholder.uicomponents.PMButton
                 android:id="@+id/ind4"
                 android:layout_width="@dimen/ind_width"
                 android:layout_height="@dimen/ind_width"
                 style="@style/key_indicate_style">
 
-            </com.bridge.passwordHolder.uicomponents.PMButton>
+            </com.bridge.passwordholder.uicomponents.PMButton>
         </LinearLayout>
         <RelativeLayout
             android:layout_below="@+id/indicate_layout"
@@ -97,7 +97,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key1"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -105,7 +105,7 @@
                     android:tag="1"
                     android:text="@string/one"
                     />
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key2"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -113,7 +113,7 @@
                     android:tag="2"
                     android:text="@string/two"
                     />
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key3"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -130,7 +130,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key4"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -138,7 +138,7 @@
                     android:tag="4"
                     android:text="@string/four"
                     />
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key5"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -146,7 +146,7 @@
                     android:text="@string/five"
                     android:tag="5"
                     />
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key6"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -162,7 +162,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key7"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -170,7 +170,7 @@
                     android:text="@string/seven"
                     android:tag="7"
                     />
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key8"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -178,7 +178,7 @@
                     android:text="@string/eight"
                     android:tag="8"
                     />
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key9"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -195,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/keyb"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -204,7 +204,7 @@
                     android:tag="b"
                     />
 
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/key0"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"
@@ -212,7 +212,7 @@
                     android:text="@string/zero"
                     android:tag="0"
                     />
-                <com.bridge.passwordHolder.uicomponents.PMButton
+                <com.bridge.passwordholder.uicomponents.PMButton
                     android:id="@+id/confirm"
                     android:layout_width="@dimen/key_width"
                     android:layout_height="@dimen/key_width"

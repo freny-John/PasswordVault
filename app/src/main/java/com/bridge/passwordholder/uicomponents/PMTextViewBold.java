@@ -25,7 +25,7 @@ public class PMTextViewBold extends android.support.v7.widget.AppCompatTextView 
 
     private void init() {
         Typeface tf = Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLTPro-Md.otf");
+                "fonts/Optima.ttf");
         setTypeface(tf);
         
         

@@ -3,6 +3,7 @@ package com.bridge.passwordholder.apimanager;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +16,6 @@ import com.bridge.passwordholder.Utils.BadRequestException;
 import com.bridge.passwordholder.Utils.CommonUtils;
 import com.bridge.passwordholder.Utils.EmailException;
 import com.bridge.passwordholder.Utils.PLog;
-
 
 /**
  * Created by Anu on 12/8/2015.
@@ -42,12 +42,16 @@ class PasswordApiClient {
             conn.addRequestProperty("X-API-KEY", "12345");
             conn.setDoInput(true);
             conn.setDoOutput(true);
-            OutputStreamWriter out = new OutputStreamWriter(
-                    conn.getOutputStream());
+
+            OutputStreamWriter out = new OutputStreamWriter(conn.getOutputStream());
             out.write(parameters);
             out.close();
+
             int responseCode = conn.getResponseCode();
-            PLog.e("response code:"+responseCode);
+
+            Log.e("myapp","response code:"+responseCode);
+
+
             if(responseCode==200||responseCode==201){
                 final String encoding=conn.getHeaderField("Content-Type");
                 if(encoding!=null&&encoding.contains("gzip"))
@@ -62,7 +66,7 @@ class PasswordApiClient {
             else if(responseCode==400){
                 throw new BadRequestException();
             }else {
-                PLog.e("error");
+              Log.e("myapp","error");
             }
 
         } finally {
@@ -70,8 +74,13 @@ class PasswordApiClient {
                 is.close();
             }
         }
-        return null;
+     return null;
     }
+
+
+
+
+
     public static String getUrl(String myUrl) throws IOException
     {
         InputStream is = null;

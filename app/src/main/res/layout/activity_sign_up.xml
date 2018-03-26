@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/edittext_bg"
-    tools:context="com.bridge.passwordHolder.SignUpActivity">
+    tools:context="com.bridge.passwordholder.SignUpActivity">
 
     <include layout="@layout/header_layout" />
 

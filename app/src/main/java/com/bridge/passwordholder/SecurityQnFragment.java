@@ -212,7 +212,7 @@ public class SecurityQnFragment extends Fragment implements onHttpListener,onRes
                 new ArrayAdapter<>(myActivity, R.layout.drop_down, countries);
         txtSecurityQn.setAdapter(adapter);
         Typeface tf = Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLTPro-Lt.otf");
+                "fonts/Optima.ttf");
         txtSecurityQn.setTypeface(tf);
 
     }

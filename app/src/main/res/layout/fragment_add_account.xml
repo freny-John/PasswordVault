@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg"
-    tools:context="com.bridge.passwordHolder.AddAccountFragment">
+    tools:context="com.bridge.passwordholder.AddAccountFragment">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar_add"
@@ -34,7 +34,7 @@
                 android:contentDescription="@string/back"
                 />
         </com.andexert.library.RippleView>
-        <com.bridge.passwordHolder.uicomponents.PMTextView
+        <com.bridge.passwordholder.uicomponents.PMTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_account"
@@ -74,7 +74,7 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-
+android:gravity="center_vertical"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/text_layout_padding">
 
-                <com.bridge.passwordHolder.uicomponents.PMEditText
+                <com.bridge.passwordholder.uicomponents.PMEditText
                     android:id="@+id/account_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,48 +96,153 @@
                     style="@style/edit_text_style"/>
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/account_layout_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/text_layout_padding">
 
-                <com.bridge.passwordHolder.uicomponents.PMEditText
-                    android:id="@+id/account_username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="@string/account_username"
-                    style="@style/edit_text_style"/>
-            </android.support.design.widget.TextInputLayout>
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/account_layout_username"
+        android:layout_width="match_parent"
+        android:layout_toStartOf="@+id/butlayout"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/text_layout_padding">
+
+        <com.bridge.passwordholder.uicomponents.PMEditText
+            android:id="@+id/account_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/account_username"
+            style="@style/edit_text_style"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <LinearLayout
+        android:id="@+id/butlayout"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/button_add_email_clipboard"
+            app:srcCompat="@drawable/ic_copy"
+            android:background="@android:color/transparent"
+
+            />
+
+        <ImageButton
+            android:id="@+id/button_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            app:srcCompat="@drawable/ic_time"
+            android:visibility="gone"
+     />
+
+        <ImageButton
+            android:id="@+id/button_remove_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            app:srcCompat="@drawable/ic_close_black"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/account_layout_password"
                 android:layout_width="match_parent"
+                android:layout_toStartOf="@+id/passlayout"
                 android:layout_height="wrap_content"
+                android:hint="@string/password"
                 android:paddingBottom="@dimen/text_layout_padding"
                 >
 
-                <com.bridge.passwordHolder.uicomponents.ShowHidePasswordEditText
+                <com.bridge.passwordholder.uicomponents.ShowHidePasswordEditText
                     android:id="@+id/account_password"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:tag="0"
-                    android:hint="@string/password"
-                    style="@style/edit_text_style"
-                    android:paddingRight="55dp"/>
+                    style="@style/edit_text_style" />
 
 
 
             </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/passlayout"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/button_add_pass_clipboard"
+                        app:srcCompat="@drawable/ic_copy"
+                        android:background="@android:color/transparent"
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/button_pass_barcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+
+                        app:srcCompat="@drawable/ic_time"
+                        android:visibility="gone"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/button_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+
+                        app:srcCompat="@drawable/ic_close_black"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/account_layout_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/text_layout_padding">
 
-                <com.bridge.passwordHolder.uicomponents.PMEditText
+                <com.bridge.passwordholder.uicomponents.PMEditText
                     android:id="@+id/account_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -149,6 +254,7 @@
 
 
         </LinearLayout>
+
     </ScrollView>
 
 

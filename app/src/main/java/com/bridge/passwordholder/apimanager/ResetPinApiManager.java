@@ -2,6 +2,7 @@ package com.bridge.passwordholder.apimanager;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 
@@ -17,7 +18,9 @@ public class ResetPinApiManager extends AsyncTask<Void, Void, Boolean>{
 
     private final String user_id;
     private String response;
-    private final String url="http://vault.bridge-delivery.com/api/users/";
+  //  private final String url="http://vault.bridge-delivery.com/api/users/";
+
+    private final String url="http://vault.bridge-global.com/index.php/api/users/";;
     private final Context c;
     private final onHttpListener monHttpListener;
 
@@ -34,13 +37,17 @@ public class ResetPinApiManager extends AsyncTask<Void, Void, Boolean>{
         if(PasswordApiClient.isOnline(c)){
 
         String url1=url + AppPreferenceManager.getValue(c,AppPreferenceManager.USER_ID)+"/reset_password";
-            PLog.e("url:"+url1);
+            Log.e("myapp","url:"+url1);
             try {
                 response= PasswordApiClient.getUrl(url1);
             } catch (IOException e) {
+
+
+
                 monHttpListener.onError(c.getString(R.string.something_went_wrong));
                 response="";
                 e.printStackTrace();
+
             }
             if(response!=null) {
                 monHttpListener.onSuccess(response);

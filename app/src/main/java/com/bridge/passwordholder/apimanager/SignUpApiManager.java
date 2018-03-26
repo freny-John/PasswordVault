@@ -2,6 +2,7 @@ package com.bridge.passwordholder.apimanager;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -22,7 +23,9 @@ public class SignUpApiManager extends AsyncTask<Void, Void, Boolean>{
     private final String last_name;
     private final String email_id;
     private String response;
-    private final String url="http://vault.bridge-delivery.com/api/users";
+    //private final String url="http://vault.bridge-delivery.com/api/users";
+    private final String url="http://vault.bridge-global.com/index.php/api/users/";
+
     private final Context c;
     private final onHttpListener monHttpListener;
 
@@ -48,8 +51,11 @@ public class SignUpApiManager extends AsyncTask<Void, Void, Boolean>{
             try {
 
                 response= PasswordApiClient.postUrl(url, CommonUtils.getJSON(resetApi));
+                Log.e("POST RESPONSE",response);
+
+
             } catch (IOException e) {
-                PLog.e("error getting"+e.getMessage());
+                Log.e("myapp","error getting"+e.getMessage());
                 monHttpListener.onError(c.getString(R.string.io_exception));
                 response="";
                 e.printStackTrace();

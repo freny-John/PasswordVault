@@ -7,7 +7,7 @@ import android.util.Log;
  */
 public class PLog {
     private static  final boolean debug_enabled=false;
-    private static  final String app_name="PasswordHolder";
+    private static  final String app_name="Passwordholder";
 
     public static void w(String msg){
       if(debug_enabled){

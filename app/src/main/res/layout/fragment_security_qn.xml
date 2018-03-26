@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    tools:context="com.bridge.passwordHolder.SecurityQnFragment"
+    tools:context="com.bridge.passwordholder.SecurityQnFragment"
     android:background="@color/bg">
 
     <ScrollView
@@ -19,7 +19,7 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:paddingBottom="@dimen/activity_vertical_margin">
 
-            <com.bridge.passwordHolder.uicomponents.PMTextView
+            <com.bridge.passwordholder.uicomponents.PMTextView
                 android:id="@+id/title"
                 android:layout_marginTop="15dp"
                 android:paddingBottom="15dp"
@@ -62,7 +62,7 @@
                         android:imeOptions="actionNext"
                         android:textSize="16sp"
                         />
-                    <com.bridge.passwordHolder.uicomponents.PMTextView
+                    <com.bridge.passwordholder.uicomponents.PMTextView
                         android:id="@+id/qn"
                         android:layout_marginTop="16dp"
                         android:layout_width="fill_parent"
@@ -73,7 +73,7 @@
                         android:visibility="gone"
                         />
 
-                    <com.bridge.passwordHolder.uicomponents.PMEditText
+                    <com.bridge.passwordholder.uicomponents.PMEditText
                         android:id="@+id/answer"
                         android:layout_marginTop="16dp"
                         android:layout_width="fill_parent"
@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.bridge.passwordHolder.uicomponents.PMTextView
+                        <com.bridge.passwordholder.uicomponents.PMTextView
                             android:id="@+id/txt_Ver"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                             android:textColor="@color/primary"
                             />
 
-                        <com.bridge.passwordHolder.uicomponents.PMButton
+                        <com.bridge.passwordholder.uicomponents.PMButton
                             android:id="@+id/btn_Go"
                             android:layout_width="@dimen/key_width"
                             android:layout_height="@dimen/key_width"
@@ -115,7 +115,7 @@
                             android:layout_alignParentRight="true"
                             android:background="@drawable/pressed_key"
                             android:textColor="@android:color/white"/><!--
-                        <com.bridge.passwordHolder.uicomponents.PMButton
+                        <com.bridge.passwordholder.uicomponents.PMButton
                             android:id="@+id/btn_Go"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
@@ -142,7 +142,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <com.bridge.passwordHolder.Utils.WaveLoadingView
+        <com.bridge.passwordholder.Utils.WaveLoadingView
             android:id="@+id/waveLoadingView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
