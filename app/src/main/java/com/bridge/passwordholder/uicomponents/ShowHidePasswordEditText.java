@@ -130,7 +130,7 @@ public class ShowHidePasswordEditText extends android.support.v7.widget.AppCompa
         }
         return super.onTouchEvent(event);
     }
-
+//chumaa
     private void showPasswordVisibilityIndicator(boolean show) {
         if (show) {
             setCompoundDrawablesWithIntrinsicBounds(null, null, isShowingPassword ?
