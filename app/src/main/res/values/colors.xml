@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#a6192e</color>
-    <color name="primary_light">#700006</color>
+    <color name="primary">#263237</color>
+    <color name="primary_light">#1e282d</color>
     <color name="default_color">#DE000000</color>
     <color name="pressed_text_color">#ffffff</color>
     <color name="bg">#ffffffff</color>
     <color name="accent">#F7F7F7</color>
     <color name="blur">#40FFFFFF</color>
     <color name="list_dark_color">#373737</color>
-    <color name="status_bar_color">#700006</color>
+    <color name="status_bar_color">#1e282d</color>
     <color name="secondary">#18FFFF</color>
     <color name="green">#00FF00</color>
     <color name="card_background">#ffffff</color>
