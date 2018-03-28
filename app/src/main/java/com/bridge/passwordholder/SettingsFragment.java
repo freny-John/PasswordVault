@@ -30,6 +30,7 @@ public class SettingsFragment extends Fragment {
         View v= inflater.inflate(R.layout.fragment_settings, container, false);
         back_button_ripple=(RippleView) v.findViewById(R.id.back_button_ripple);
         resetPinButtonRipple=(RippleView) v.findViewById(R.id.reset_pin_button_ripple);
+
         back_button_ripple.setOnRippleCompleteListener(rippleView -> myActivity.onBackPressed());
         resetPinButtonRipple.setOnRippleCompleteListener(rippleView -> {
             if (myActivity != null ) {

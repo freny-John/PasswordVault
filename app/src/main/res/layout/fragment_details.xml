@@ -124,7 +124,7 @@
                     android:layout_width="76dp"
                     android:layout_height="76dp"
                     tools:visibility="visible"
-                    app:backgroundColorValue="@color/primary_light"
+                    app:backgroundColorValue="@color/primary_dark"
                     app:titleColor="@android:color/white"
                     app:titleSize="35dp"
                     app:titleText="A"

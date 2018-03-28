@@ -87,7 +87,7 @@ public class AddAccountFragment extends Fragment {
                 ClipData cData = ClipData.newPlainText("text", accountUsername.getText().toString());
                 cManager.setPrimaryClip(cData);
 
-                Toast.makeText(getActivity(),"Copied To Clipboard",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -99,7 +99,7 @@ public class AddAccountFragment extends Fragment {
                 ClipboardManager cManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData cData = ClipData.newPlainText("text", accountPassword.getText().toString());
                 cManager.setPrimaryClip(cData);
-                Toast.makeText(getActivity(),"Copied To Clipboard",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
             }
         });
 

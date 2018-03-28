@@ -97,7 +97,7 @@
                     android:textSize="14sp"
                     android:layout_marginRight="6dp"
                     android:id="@+id/btn_p"
-                    android:textColor="@color/secondary"
+                    android:textColor="@color/primary"
                     android:background="@drawable/button"
                     android:layout_width="wrap_content"
                     android:layout_height="34dp"/>
