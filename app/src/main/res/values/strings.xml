@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">Safe Vault</string>
+    <string name="app_name">Crypto Vault</string>
     <string name="action_settings">Settings</string>
     <string name="account_type">Account type</string>
     <string name="account_username">Username/Email</string>
@@ -23,7 +23,7 @@
     <string name="delete_title">Do you want to delete?</string>
     <string name="finish_app">Do you want to exit?</string>
     <string name="delete_text">Do you really want to delete&#160;</string>
-    <string name="finish_text">Do you really want to exit from \'Safe\' ?</string>
+    <string name="finish_text">Do you really want to exit from \'Crypto Vault\' ?</string>
     <string name="pass_code">pM123#</string>
     <string name="pass_code1">pM456!</string>
     <string name="btn_edit">edit</string>

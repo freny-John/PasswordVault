@@ -72,13 +72,13 @@ public class DeleteConfirmationDialog extends DialogFragment {
         return mDialogInstance;
 
     }
-    public static DeleteConfirmationDialog getDialogInstance(DialogType mType,String message,String content,
+    public static DeleteConfirmationDialog getDialogInstance(DialogType mType, String message,
                                                              MainActivity mActivity){
         if(mDialogInstance==null){
             mDialogInstance=new DeleteConfirmationDialog();
         }
         dialogMessage=message;
-        dialogContent=content;
+       // dialogContent=content;
         mFragmentListener =mActivity;
         return mDialogInstance;
 

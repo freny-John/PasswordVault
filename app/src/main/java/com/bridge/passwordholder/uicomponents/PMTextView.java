@@ -25,7 +25,7 @@ public class PMTextView extends android.support.v7.widget.AppCompatTextView {
 
     private void init() {
         Typeface tf = Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/Optima.ttf");
+                "fonts/OptimaBold.ttf");
         setTypeface(tf);
     }
 

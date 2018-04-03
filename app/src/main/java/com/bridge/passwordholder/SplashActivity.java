@@ -2,6 +2,7 @@ package com.bridge.passwordholder;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -20,6 +21,8 @@ import com.bridge.passwordholder.R;
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 import com.bridge.passwordholder.Utils.AppPreferenceManager;
+
+import static java.security.AccessController.getContext;
 
 /***
  * Splash screen page
@@ -44,6 +47,12 @@ public class SplashActivity extends AppCompatActivity {
         splashContainer=(RelativeLayout) findViewById(R.id.splash_container);
         viewAnimate(imageLogo, R.anim.zoom_in);
         viewAnimate(topText, R.anim.shaking);
+
+        TextView splashtext=findViewById(R.id.splash_text);
+
+        Typeface tf = tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts/OptimaBold.ttf");
+        splashtext.setTypeface(tf);
+
 
 
         new Handler().postDelayed(() -> {

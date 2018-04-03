@@ -5,14 +5,18 @@
     android:background="@color/primary"
     android:id="@+id/splash_container"
     tools:context="com.bridge.passwordholder.SplashActivity">
+
     <ImageView
         android:id="@+id/image_logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/logo"
+
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:contentDescription="@string/logo"
-        android:transitionName="@string/activity_image_trans"
-        android:layout_centerInParent="true"/>
+        android:gravity="center_vertical|center_horizontal"
+        android:src="@drawable/logo1"
+        android:transitionName="@string/activity_image_trans" />
     <com.bridge.passwordholder.uicomponents.PMTextViewBold
         android:id="@+id/topText"
         android:text="@string/splash_text" android:layout_width="wrap_content"
@@ -29,36 +33,31 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="@dimen/copy_right_margin"
         android:layout_alignParentBottom="true">
-        <com.bridge.passwordholder.uicomponents.PMTextView
+        <com.bridge.passwordholder.uicomponents.PMTextViewBold
             android:text="@string/your" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/bg"/>
+
         <com.bridge.passwordholder.uicomponents.PMTextViewBold
-            android:text="@string/personal" android:layout_width="wrap_content"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/bg"/>
-        <com.bridge.passwordholder.uicomponents.PMTextView
-            android:text="password " android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/bg"
-            tools:ignore="HardcodedText"
-            />
+            android:text="@string/personal"
+            android:textColor="@color/bg" />
+
         <com.bridge.passwordholder.uicomponents.PMTextViewBold
             android:text="@string/vault" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/bg"/>
     </LinearLayout>
-    <!-- <com.bridge.passwordHolder.Utils.RightTriangleBackgroundView
-         android:layout_gravity="center_horizontal|top"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:id="@+id/view1"
-         custom:tr_color_red="false" />
-     <com.bridge.passwordHolder.Utils.RightTriangleBackgroundView
-         android:layout_gravity="center_horizontal|top"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:rotation="180"
-         android:id="@+id/view2"
-         custom:tr_color_red="false" />-->
+
+    <TextView
+        android:id="@+id/splash_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_logo"
+        android:layout_centerHorizontal="true"
+        android:text="Crypto Vault"
+        android:textColor="@android:color/white"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 </RelativeLayout>

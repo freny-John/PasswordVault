@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements com.bridge.passwo
     }
     private DialogFragment fragment;
     private void confirmFinish() {
-        fragment = DeleteConfirmationDialog.getDialogInstance(DeleteConfirmationDialog.DialogType.DIALOG_DELETE_CONFIRMATION, getString(R.string.finish_app), getString(R.string.finish_text), MainActivity.this);
+        fragment = DeleteConfirmationDialog.getDialogInstance(DeleteConfirmationDialog.DialogType.DIALOG_DELETE_CONFIRMATION, getString(R.string.finish_app), MainActivity.this);
         if(!fragment.isInLayout()) {
             try {
                 fragment.show(getSupportFragmentManager(), "myDialog");

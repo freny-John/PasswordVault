@@ -121,6 +121,7 @@ public class AddAccountFragment extends Fragment {
         accountLayoutName=(TextInputLayout) v.findViewById(R.id.account_layout_name);
         accountLayoutUsername=(TextInputLayout) v.findViewById(R.id.account_layout_username);
         accountLayoutPassword=(TextInputLayout) v.findViewById(R.id.account_layout_password);
+
         Typeface tf = tf = Typeface.createFromAsset(getContext().getAssets(),
                 "fonts/Optima.ttf");
         accountLayoutPassword.setTypeface(tf);
