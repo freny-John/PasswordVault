@@ -86,7 +86,10 @@ public class AccountListFragment extends Fragment implements LoaderManager.Loade
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         myActivity.getMenuInflater().inflate(R.menu.menu_account_list, menu);
         SearchManager searchManager = (SearchManager) myActivity.getSystemService(Context.SEARCH_SERVICE);
+
         searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+
+
         try {
             searchView.setMaxWidth(Integer.MAX_VALUE);
         } catch (NullPointerException n) {

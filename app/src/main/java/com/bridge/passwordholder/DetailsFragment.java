@@ -1,7 +1,10 @@
 package com.bridge.passwordholder;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ContentValues;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -17,8 +20,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.andexert.library.RippleView;
@@ -49,6 +54,9 @@ public class DetailsFragment extends Fragment implements RippleView.OnRippleComp
     RippleView back_button_ripple,deleteButtonRipple,editButtonRipple;
     static AddAccountFragment.OnEditSuccessfulListener mOnEditSuccessfulListener;
 
+    private ImageButton btn_email_copy,btn_password_copy;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +71,41 @@ public class DetailsFragment extends Fragment implements RippleView.OnRippleComp
                              Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_details, container, false);
         initUi(v);
+
+
+
+
+        btn_email_copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ClipboardManager cManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData cData = ClipData.newPlainText("text", accountUsername.getText().toString());
+                cManager.setPrimaryClip(cData);
+
+                Toast.makeText(getActivity(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        btn_password_copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ClipboardManager cManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData cData = ClipData.newPlainText("text", accountPassword.getText().toString());
+                cManager.setPrimaryClip(cData);
+                Toast.makeText(getActivity(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+
+
+
+
         return v;
     }
 
@@ -113,6 +156,10 @@ public class DetailsFragment extends Fragment implements RippleView.OnRippleComp
     }
 
     private void initUiComponents(View v) {
+
+        btn_email_copy= (ImageButton) v.findViewById(R.id.button_add_email_clipboard);
+        btn_password_copy= (ImageButton) v.findViewById(R.id.button_add_pass_clipboard);
+
 
         accountName=(TextView) v.findViewById(R.id.account_name);
         accountUsername=(TextView)v.findViewById(R.id.account_username);

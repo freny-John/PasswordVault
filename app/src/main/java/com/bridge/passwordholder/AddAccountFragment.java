@@ -79,29 +79,6 @@ public class AddAccountFragment extends Fragment {
         });
 
 
-        btn_email_copy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                ClipboardManager cManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData cData = ClipData.newPlainText("text", accountUsername.getText().toString());
-                cManager.setPrimaryClip(cData);
-
-                Toast.makeText(getActivity(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        btn_password_copy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                ClipboardManager cManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData cData = ClipData.newPlainText("text", accountPassword.getText().toString());
-                cManager.setPrimaryClip(cData);
-                Toast.makeText(getActivity(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
-            }
-        });
 
 
         return v;
@@ -110,8 +87,7 @@ public class AddAccountFragment extends Fragment {
     private void initUi(View v) {
 
         btn_add= (RippleView) v.findViewById(R.id.btn_add);
-        btn_email_copy= (ImageButton) v.findViewById(R.id.button_add_email_clipboard);
-        btn_password_copy= (ImageButton) v.findViewById(R.id.button_add_pass_clipboard);
+
 
         accountName=(EditText) v.findViewById(R.id.account_name);
         accountUsername=(EditText)v.findViewById(R.id.account_username);

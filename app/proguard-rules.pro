@@ -18,3 +18,4 @@
 -keep class com.google.android.gms.** { *; }
 -dontwarn com.google.android.gms.
 -dontwarn java.lang.invoke.*
+-keep class android.support.v7.widget.SearchView { *; }
