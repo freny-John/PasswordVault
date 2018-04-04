@@ -240,34 +240,35 @@
                 android:orientation="vertical">
 
                 <com.bridge.passwordholder.uicomponents.PMTextView
+                    android:id="@+id/pmview1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/pmview1"
                     android:padding="8dp"
                     android:text="@string/account_username" />
 
 
                 <RelativeLayout
                     android:id="@+id/passlayout"
-                    android:layout_below="@+id/pmview1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/pmview1"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <com.bridge.passwordholder.uicomponents.PMTextViewBold
                         android:id="@+id/account_username"
-                        android:layout_centerInParent="true"
                         android:layout_width="match_parent"
-                        android:layout_toStartOf="@+id/button_add_email_clipboard"
                         android:layout_height="wrap_content"
-                        android:padding="8dp" />
-                    <ImageButton
                         android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/button_add_email_clipboard"
+                        android:padding="8dp" />
+
+                    <ImageButton
                         android:id="@+id/button_add_email_clipboard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
                         android:layout_gravity="center_vertical"
                         android:background="@android:color/transparent"
                         app:srcCompat="@drawable/ic_copy"
@@ -276,16 +277,14 @@
                 </RelativeLayout>
 
 
-
             </RelativeLayout>
-
 
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="@color/light_grey">
-            </View>
+                android:background="@color/light_grey"></View>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -300,24 +299,23 @@
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="center_vertical">
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
 
                     <com.bridge.passwordholder.uicomponents.PMTextViewBold
                         android:id="@+id/account_password"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_toStartOf="@+id/eye_view_switcher"
-                        android:layout_height="wrap_content"
                         android:padding="8dp" />
-
 
 
                     <ViewSwitcher
                         android:id="@+id/eye_view_switcher"
                         android:layout_width="wrap_content"
-                        android:layout_centerInParent="true"
                         android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
                         android:layout_toStartOf="@+id/button_add_pass_clipboard"
                         android:padding="8dp"
                         android:tag="0">
@@ -335,19 +333,19 @@
                             android:src="@drawable/eye_hidden" />
 
                     </ViewSwitcher>
+
                     <ImageButton
-                        android:layout_centerInParent="true"
-                        android:layout_alignParentEnd="true"
+                        android:id="@+id/button_add_pass_clipboard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
                         android:layout_gravity="center_vertical"
-                        android:id="@+id/button_add_pass_clipboard"
-                        app:srcCompat="@drawable/ic_copy"
-
                         android:background="@android:color/transparent"
 
-                        />
+                        app:srcCompat="@drawable/ic_copy"
 
+                        />
 
 
                 </RelativeLayout>

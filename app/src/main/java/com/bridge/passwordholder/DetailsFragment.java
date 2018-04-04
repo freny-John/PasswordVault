@@ -83,7 +83,7 @@ public class DetailsFragment extends Fragment implements RippleView.OnRippleComp
                 ClipData cData = ClipData.newPlainText("text", accountUsername.getText().toString());
                 cManager.setPrimaryClip(cData);
 
-                Toast.makeText(getActivity(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity()," Email copied to clipboard",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -95,7 +95,7 @@ public class DetailsFragment extends Fragment implements RippleView.OnRippleComp
                 ClipboardManager cManager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData cData = ClipData.newPlainText("text", accountPassword.getText().toString());
                 cManager.setPrimaryClip(cData);
-                Toast.makeText(getActivity(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"Password copied to clipboard",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -143,6 +143,7 @@ public class DetailsFragment extends Fragment implements RippleView.OnRippleComp
         deleteButtonRipple.setOnRippleCompleteListener(this);
         editButtonRipple.setOnRippleCompleteListener(this);
         back_button_ripple.setRippleDuration(150);
+
         back_button_ripple.setOnRippleCompleteListener(this);
 
         viewZoomIn(accountName);
@@ -175,6 +176,7 @@ public class DetailsFragment extends Fragment implements RippleView.OnRippleComp
         back_button_ripple= (RippleView) v.findViewById(R.id.back_button_ripple);
         deleteButtonRipple=(RippleView) v.findViewById(R.id.delete_button_ripple);
         editButtonRipple=(RippleView) v.findViewById(R.id.edit_button_ripple);
+
         mToolbar = (Toolbar)v. findViewById(R.id.my_toolbar);
     }
 
