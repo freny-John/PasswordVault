@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bridge.passwordholder.Utils.AppPreferenceManager;
 
@@ -57,9 +58,13 @@ public class LoginActivity extends AppCompatActivity {
 
     public void gotoMainActivity() {
         hideSoftKeyboard();
-        Intent startMain = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(startMain);
-        finish();
+//        Intent startMain = new Intent(LoginActivity.this, MainActivity.class);
+//        startActivity(startMain);
+//        finish();
+
+        Toast.makeText(getApplicationContext(), "Lock desabled", Toast.LENGTH_SHORT).show();
+
+
     }
     private void viewZoomIn(View v) {
 
